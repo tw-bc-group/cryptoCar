@@ -35,6 +35,4 @@ contract('credit', (accounts) => {
     // it("can gain credit token successfully", async () => {
     //
     // });
-
-
 });

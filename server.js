@@ -13,47 +13,30 @@ app.use(bodyParser.json());
 
 app.use('/', express.static('public_static'));
 
-app.get('/getAccounts', (req, res) => {
-  console.log("**** GET /getAccounts ****");
-  truffle_connect.start(function (answer) {
-    res.send(answer);
-  })
-});
+app.post('/cars', (req, res) => {
+    console.log('**** POST /cars ****');
+    console.log(req.body);
 
-app.post('/getBalance', (req, res) => {
-  console.log("**** GET /getBalance ****");
-  console.log(req.body);
-  let currentAcount = req.body.account;
-
-  truffle_connect.refreshBalance(currentAcount, (answer) => {
-    let account_balance = answer;
-    truffle_connect.start(function(answer){
-      // get list of all accounts and send it along with the response
-      let all_accounts = answer;
-      response = [account_balance, all_accounts]
-      res.send(response);
+    truffle_connect.newCar(req.body.account, req.body.carInfo, (event) => {
+        if (!event) {
+            res.send('failed.');
+        }
+        res.send('successful.');
     });
-  });
 });
 
-app.post('/sendCoin', (req, res) => {
-  console.log("**** GET /sendCoin ****");
-  console.log(req.body);
+app.get('/features', (req, res) => {
+    console.log('**** GET / POIs ****');
+    const { boundingbox, scale, position, vin } = req.query;
 
-  let amount = req.body.amount;
-  let sender = req.body.sender;
-  let receiver = req.body.receiver;
-
-  truffle_connect.sendCoin(amount, sender, receiver, (balance) => {
-    res.send(balance);
-  });
+    //TODO
 });
 
 app.listen(port, () => {
 
-  // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-  truffle_connect.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+    truffle_connect.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
 
-  console.log("Express Listening at http://localhost:" + port);
-
+    console.log('Express Listening at http://localhost:' + port);
+    truffle_connect.start();
 });

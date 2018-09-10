@@ -1,66 +1,56 @@
 const contract = require('truffle-contract');
 
-const metacoin_artifact = require('../build/contracts/MetaCoin.json');
-var MetaCoin = contract(metacoin_artifact);
+const carController_artifact = require('../build/contracts/CarController.json');
+const CarController = contract(carController_artifact);
+
+const getEvent = (result, eventName) => {
+    for (let i = 0; i < result.logs.length; i++) {
+        const log = result.logs[ i ];
+
+        if (log.event === eventName) {
+            return log;
+        }
+    }
+};
+
+let accounts = [];
+let owner;
 
 module.exports = {
-  start: function(callback) {
-    var self = this;
+    start: function () {
+        const self = this;
 
-    // Bootstrap the MetaCoin abstraction for Use.
-    MetaCoin.setProvider(self.web3.currentProvider);
+        CarController.setProvider(self.web3.currentProvider);
 
-    // Get the initial account balance so it can be displayed.
-    self.web3.eth.getAccounts(function(err, accs) {
-      if (err != null) {
-        alert("There was an error fetching your accounts.");
-        return;
-      }
+        self.web3.eth.getAccounts(function (err, accs) {
+            if (err != null) {
+                alert('There was an error fetching your accounts.');
+                return;
+            }
 
-      if (accs.length == 0) {
-        alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
-        return;
-      }
-      self.accounts = accs;
-      self.account = self.accounts[2];
+            if (accs.length == 0) {
+                alert('Couldn\'t get any accounts! Make sure your Ethereum client is configured correctly.');
+                return;
+            }
+            accounts = accs;
+            owner = accs[ 0 ];
+        });
+    },
+    newCar: function (account, carInfo, callback) {
+        const self = this;
 
-      callback(self.accounts);
-    });
-  },
-  refreshBalance: function(account, callback) {
-    var self = this;
+        CarController.setProvider(self.web3.currentProvider);
 
-    // Bootstrap the MetaCoin abstraction for Use.
-    MetaCoin.setProvider(self.web3.currentProvider);
-
-    var meta;
-    MetaCoin.deployed().then(function(instance) {
-      meta = instance;
-      return meta.getBalance.call(account, {from: account});
-    }).then(function(value) {
-        callback(value.valueOf());
-    }).catch(function(e) {
-        console.log(e);
-        callback("Error 404");
-    });
-  },
-  sendCoin: function(amount, sender, receiver, callback) {
-    var self = this;
-
-    // Bootstrap the MetaCoin abstraction for Use.
-    MetaCoin.setProvider(self.web3.currentProvider);
-
-    var meta;
-    MetaCoin.deployed().then(function(instance) {
-      meta = instance;
-      return meta.sendCoin(receiver, amount, {from: sender});
-    }).then(function() {
-      self.refreshBalance(sender, function (answer) {
-        callback(answer);
-      });
-    }).catch(function(e) {
-      console.log(e);
-      callback("ERROR 404");
-    });
-  }
-}
+        let carController;
+        CarController.deployed().then(function (instance) {
+            carController = instance;
+            return carController.mintUniqueTokenTo(account, carInfo.vin, carInfo.bmc, 'http://',
+                { from: owner, gas: 300000 });
+        }).then(function (value) {
+            callback(getEvent(value, 'NewCar'));
+        }).catch(function (e) {
+            console.log(e);
+            callback('Error 404');
+        });
+    },
+};
