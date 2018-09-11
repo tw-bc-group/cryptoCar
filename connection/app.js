@@ -17,7 +17,7 @@ let accounts = [];
 let owner;
 
 module.exports = {
-    start: function () {
+    start: function (callback) {
         const self = this;
 
         CarController.setProvider(self.web3.currentProvider);
@@ -33,7 +33,11 @@ module.exports = {
                 return;
             }
             accounts = accs;
-            owner = accs[ 0 ];
+            owner = accs[0];
+
+            if(callback){
+                callback(accounts);
+            }
         });
     },
     newCar: function (account, carInfo, callback) {

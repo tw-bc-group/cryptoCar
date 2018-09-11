@@ -13,6 +13,13 @@ app.use(bodyParser.json());
 
 app.use('/', express.static('public_static'));
 
+app.get('/getAccounts', (req, res) => {
+    console.log('**** GET /getAccounts ****');
+    truffle_connect.start((accounts) => {
+        res.send(accounts);
+    })
+})
+
 app.post('/cars', (req, res) => {
     console.log('**** POST /cars ****');
     console.log(req.body);
