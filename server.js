@@ -13,13 +13,6 @@ app.use(bodyParser.json());
 
 app.use('/', express.static('public_static'));
 
-app.get('/getAccounts', (req, res) => {
-    console.log('**** GET /getAccounts ****');
-    truffle_connect.start((accounts) => {
-        res.send(accounts);
-    })
-})
-
 app.post('/cars', (req, res) => {
     console.log('**** POST /cars ****');
     console.log(req.body);
@@ -34,9 +27,15 @@ app.post('/cars', (req, res) => {
 
 app.get('/features', (req, res) => {
     console.log('**** GET / POIs ****');
-    const { boundingbox, scale, position, vin } = req.query;
+    const { boundingbox, scale, position, heading, vin } = req.query;
 
     //TODO
+});
+
+app.get('/details/:id', (req, res) => {
+    console.log('**** GET / POI detail ****');
+    const carId = req.params.id;
+    truffle_connect.detail(carId, (carInfo) => res.send(carInfo));
 });
 
 app.listen(port, () => {

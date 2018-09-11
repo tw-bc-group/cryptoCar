@@ -4,3 +4,4 @@ box-img-sm.png
 build/
 node_modules/
 package-lock.json
+nohup.out

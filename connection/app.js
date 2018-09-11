@@ -17,7 +17,7 @@ let accounts = [];
 let owner;
 
 module.exports = {
-    start: function (callback) {
+    start: function () {
         const self = this;
 
         CarController.setProvider(self.web3.currentProvider);
@@ -33,11 +33,7 @@ module.exports = {
                 return;
             }
             accounts = accs;
-            owner = accs[0];
-
-            if(callback){
-                callback(accounts);
-            }
+            owner = accs[ 0 ];
         });
     },
     newCar: function (account, carInfo, callback) {
@@ -57,4 +53,17 @@ module.exports = {
             callback('Error 404');
         });
     },
+    detail: function (carId, callback) {
+        const self = this;
+
+        CarController.setProvider(self.web3.currentProvider);
+        let carController;
+        CarController.deployed().then(function (instance) {
+            carController = instance;
+            return carController.tokenIdToCarInfo.call(carId);
+        }).then(function (value) {
+            const [ tokenId, bcm, level ] = value;
+            callback({ tokenId, bcm, level });
+        });
+    }
 };
