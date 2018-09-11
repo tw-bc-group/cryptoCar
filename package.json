@@ -4,7 +4,7 @@
   "description": "Make API-Endpoints for Ethereum BlockChain",
   "main": "truffle-config.js",
   "scripts": {
-    "start": "truffle migrate --reset && nodemon server.js",
+    "start": "truffle migrate --reset && nodemon server.js &",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ThoughtWorks",
