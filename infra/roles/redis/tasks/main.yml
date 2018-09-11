@@ -1,0 +1,21 @@
+---
+# tasks file for redis
+- name: Install data container
+  docker_container:
+      name: data-storage
+      image: busybox
+      state: started
+      volumes:
+          - /data
+
+- name: Install redis container
+  docker_container:
+      name: redis
+      image: redis
+      command: redis-server --appendonly yes
+      state: started
+      recreate: yes
+      exposed_ports:
+          - 6379
+      volumes_from:
+          - data-storage

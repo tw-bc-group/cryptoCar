@@ -1,0 +1,3 @@
+---
+# vars file for oh-my-zsh
+username: "{{ host_username }}"

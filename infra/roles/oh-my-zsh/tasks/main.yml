@@ -1,0 +1,28 @@
+---
+# tasks file for oh-my-zsh
+- name: Install a list of packages
+  apt:
+      name: "{{ packages }}"
+      update_cache: yes
+  vars:
+      packages:
+          - git
+          - zsh
+
+- name: Download oh-my-zsh install file
+  get_url:
+      url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+      dest: /tmp
+
+- name: Install oh-my-zsh
+  command: /bin/sh /tmp/install.sh
+  become_user: "{{ username }}"
+
+- name: Remove oh-my-zsh install shell script
+  file:
+      path: /tmp/install.sh
+      state: absent
+
+- name: change shell to zsh
+  command: chsh -s /usr/bin/zsh {{username}}
+
