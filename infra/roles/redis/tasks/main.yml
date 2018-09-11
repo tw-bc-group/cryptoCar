@@ -15,7 +15,7 @@
       command: redis-server --appendonly yes
       state: started
       recreate: yes
-      exposed_ports:
-          - 6379
+      published_ports:
+          - 6379:6379
       volumes_from:
           - data-storage

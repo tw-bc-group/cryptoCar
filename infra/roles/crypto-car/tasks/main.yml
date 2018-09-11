@@ -1,0 +1,31 @@
+---
+# tasks file for crypto-car
+- name: Install ganache-cli container
+  docker_container:
+      name: ganache-cli
+      image: trufflesuite/ganache-cli
+      state: started
+      published_ports:
+          - 7545:8545
+
+- name: Install truffle globally
+  npm:
+      name: truffle
+      global: yes
+
+- name: Download crypto-car
+  git:
+      repo: 'https://github.com/tw-bc-group/cryptoCar.git'
+      dest: ws
+  become_user: hackathon
+
+- name: Install deps
+  npm:
+      path: ws
+  become_user: hackathon
+
+- name: Start crypto-car
+  command: npm start
+  args:
+      chdir: ws
+  become_user: hackathon

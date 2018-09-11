@@ -13,3 +13,8 @@ your_ip_address -> ip address
 ```
 ansible-playbook site.yml -i hosts -e "host_username=hackathon nodejs_version=8.x"
 ```
+
+## All in one
+```
+./play.sh
+```

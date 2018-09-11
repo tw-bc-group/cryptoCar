@@ -2,7 +2,8 @@
   remote_user: hackathon 
   become: yes
   roles:
-      - oh-my-zsh
-      - geerlingguy.docker
-      - geerlingguy.nodejs
-      - redis 
+      #      - oh-my-zsh
+      #      - geerlingguy.docker
+      #      - geerlingguy.nodejs
+      #      - redis 
+      - crypto-car
