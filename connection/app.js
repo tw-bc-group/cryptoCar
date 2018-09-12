@@ -1,5 +1,6 @@
 const contract = require('truffle-contract');
 const carDetailTemplate = require('./carDetailTemplate');
+const poiFeaturesTemplate = require('./poiFeaturesTemplate');
 const poi = require('./poi');
 const _ = require('lodash');
 
@@ -73,9 +74,16 @@ module.exports = {
     },
     feature: function (boundingbox, scale, position, heading, VIN, callback) {
         const [ longitude0, latitude0, longitude1, latitude1 ] = getFloatArray(boundingbox);
-        const [ selfLongitude, selfLatitude] = getFloatArray(position);
+        const [ selfLongitude, selfLatitude ] = getFloatArray(position);
 
         poi.savePosition(selfLongitude, selfLatitude, VIN);
-        poi.getPoiInRange(longitude0, latitude0, longitude1, latitude1, VIN, callback);
+        poi.getPoiInRange(
+            longitude0,
+            latitude0,
+            longitude1,
+            latitude1,
+            VIN,
+            (pois) => callback(poiFeaturesTemplate.buildFeatures(pois))
+        );
     }
 };
