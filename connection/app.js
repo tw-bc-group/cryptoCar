@@ -1,4 +1,5 @@
 const contract = require('truffle-contract');
+const carDetailTemplate = require('./carDetailTemplate');
 
 const carController_artifact = require('../build/contracts/CarController.json');
 const CarController = contract(carController_artifact);
@@ -63,7 +64,7 @@ module.exports = {
             return carController.tokenIdToCarInfo.call(carId);
         }).then(function (value) {
             const [ tokenId, bcm, level ] = value;
-            callback({ tokenId, bcm, level });
+            callback(carDetailTemplate.buildCarDetail(tokenId, bcm, level));
         });
     }
 };
