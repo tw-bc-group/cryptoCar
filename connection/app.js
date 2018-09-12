@@ -1,5 +1,7 @@
 const contract = require('truffle-contract');
 const carDetailTemplate = require('./carDetailTemplate');
+const poi = require('./poi');
+const _ = require('lodash');
 
 const carController_artifact = require('../build/contracts/CarController.json');
 const CarController = contract(carController_artifact);
@@ -13,6 +15,8 @@ const getEvent = (result, eventName) => {
         }
     }
 };
+
+const getFloatArray = (inputString) => _.map(_.split(inputString, ','), str => parseFloat(str));
 
 let accounts = [];
 let owner;
@@ -66,5 +70,12 @@ module.exports = {
             const [ tokenId, bcm, level ] = value;
             callback(carDetailTemplate.buildCarDetail(tokenId, bcm, level));
         });
+    },
+    feature: function (boundingbox, scale, position, heading, VIN, callback) {
+        const [ longitude0, latitude0, longitude1, latitude1 ] = getFloatArray(boundingbox);
+        const [ selfLongitude, selfLatitude] = getFloatArray(position);
+
+        poi.savePosition(selfLongitude, selfLatitude, VIN);
+        poi.getPoiInRange(longitude0, latitude0, longitude1, latitude1, VIN, callback);
     }
 };
