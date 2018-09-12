@@ -28,6 +28,7 @@ app.post('/cars', (req, res) => {
 app.get('/features', (req, res) => {
     console.log('**** GET / POIs ****');
     const { boundingbox, scale, position, heading, VIN } = req.query;
+    console.log(position)
     truffle_connect.feature(boundingbox, scale, position, heading, VIN, (data) => {
         res.send(data);
     });
