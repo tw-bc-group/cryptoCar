@@ -28,16 +28,16 @@ app.post('/cars', (req, res) => {
 app.get('/features', (req, res) => {
     console.log('**** GET / POIs ****');
     const { boundingbox, scale, position, heading, VIN } = req.query;
-    console.log(position)
-    truffle_connect.feature(boundingbox, scale, position, heading, VIN, (data) => {
+    console.log(position);
+    truffle_connect.features(boundingbox, scale, position, heading, VIN, (data) => {
         res.send(data);
     });
 });
 
 app.get('/details/:id', (req, res) => {
     console.log('**** GET / POI detail ****');
-    const carId = req.params.id;
-    truffle_connect.detail(carId, (carInfo) => res.send(carInfo));
+    const VIN = req.params.id;
+    truffle_connect.detail(VIN, (carInfo) => res.send(carInfo));
 });
 
 app.listen(port, () => {

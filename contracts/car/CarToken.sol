@@ -14,10 +14,11 @@ contract CarToken is ERC721Token, Ownable {
 
     event NewCar(uint tokenId);
     mapping(uint => CarInfo) public tokenIdToCarInfo;
+    mapping(uint => uint[]) public metCars;
     struct CarInfo {
         uint tokenId;
         uint bcm;
-        uint32 level;
+        uint navigatedMileage;
     }
 
     function mintUniqueTokenTo(
@@ -29,7 +30,7 @@ contract CarToken is ERC721Token, Ownable {
     {
         super._mint(_to, _tokenId);
         super._setTokenURI(_tokenId, _tokenURI);
-        tokenIdToCarInfo[_tokenId] = CarInfo(_tokenId, _bcm, 1);
+        tokenIdToCarInfo[_tokenId] = CarInfo(_tokenId, _bcm, 0);
         emit NewCar(_tokenId);
     }
 

@@ -1,41 +1,20 @@
 pragma solidity ^0.4.23;
 
-import "../ContractManager.sol";
-import "../credit/CreditController.sol";
 import "./CarToken.sol";
 
 contract CarController is CarToken {
-    address managerAddress;
-    uint creditRatePerLevel = 10;
+    event MeetingOtherCar(uint tokenId, uint otherTokenId, string otherCarUri);
 
-    function needCreditCount(uint _carTokenId) public view returns (uint)
+    function addNavigatedMileage(uint _tokenId, uint _increasedMileage)
+        external onlyOwner
     {
-        return creditRatePerLevel * tokenIdToCarInfo[_carTokenId].level;
+        tokenIdToCarInfo[_tokenId].navigatedMileage += _increasedMileage;
     }
 
-    function levelUp(uint _carTokenId) external returns (uint)
+    function meetCar(uint _tokenId, uint _otherTokenId)
+        external onlyOwner
     {
-        CreditController _creditController = getCreditController();
-        require(_creditController.balanceOf(msg.sender) >= needCreditCount(_carTokenId), 'not sufficient funds');
-        return tokenIdToCarInfo[_carTokenId].level++;
+        metCars[_tokenId].push(_otherTokenId);
+        emit MeetingOtherCar(_tokenId, _otherTokenId, tokenURI(_otherTokenId));
     }
-
-    function setCreditRate(uint _creditRate) external onlyOwner
-    {
-        creditRatePerLevel = _creditRate;
-    }
-
-
-    function setManagerAddress(address _managerAddress) public onlyOwner
-    {
-        managerAddress = _managerAddress;
-    }
-
-    function getCreditController() private view returns (CreditController)
-    {
-        ContractManager _manager = ContractManager(managerAddress);
-        address _creditControllerAddress = _manager.getAddress("CreditController");
-        return CreditController(_creditControllerAddress);
-    }
-
 }

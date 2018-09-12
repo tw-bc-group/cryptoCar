@@ -46,11 +46,8 @@ module.exports = {
         const self = this;
 
         CarController.setProvider(self.web3.currentProvider);
-
-        let carController;
         CarController.deployed().then(function (instance) {
-            carController = instance;
-            return carController.mintUniqueTokenTo(account, carInfo.vin, carInfo.bmc, 'http://',
+            return instance.mintUniqueTokenTo(account, carInfo.vin, carInfo.bmc, 'http://',
                 { from: owner, gas: 300000 });
         }).then(function (value) {
             callback(getEvent(value, 'NewCar'));
@@ -59,24 +56,23 @@ module.exports = {
             callback('Error 404');
         });
     },
-    detail: function (carId, callback) {
+    detail: function (VIN, callback) {
         const self = this;
 
         CarController.setProvider(self.web3.currentProvider);
-        let carController;
         CarController.deployed().then(function (instance) {
-            carController = instance;
-            return carController.tokenIdToCarInfo.call(carId);
+            return instance.tokenIdToCarInfo.call(VIN);
         }).then(function (value) {
-            const [ tokenId, bcm, level ] = value;
-            callback(carDetailTemplate.buildCarDetail(tokenId, bcm, level));
+            const [ tokenId, bcm, navigatedMileage ] = value;
+            callback(carDetailTemplate.buildCarDetail(tokenId, bcm, navigatedMileage));
         });
     },
-    feature: function (boundingbox, scale, position, heading, VIN, callback) {
+    features: function (boundingbox, scale, position, heading, VIN, callback) {
+        const self = this;
         const [ longitude0, latitude0, longitude1, latitude1 ] = getFloatArray(boundingbox);
-        const [ selfLongitude, selfLatitude ] = getFloatArray(position);
+        const [ selfLon, selfLat ] = getFloatArray(position);
 
-        poi.savePosition(selfLongitude, selfLatitude, VIN);
+        poi.savePosition(selfLon, selfLat, VIN);
         poi.getPoiInRange(
             longitude0,
             latitude0,
@@ -85,5 +81,36 @@ module.exports = {
             VIN,
             (pois) => callback(poiFeaturesTemplate.buildFeatures(pois))
         );
+
+        // self.addNavigatedMileage(VIN, selfLon, selfLat);
+        self.meetingCar(VIN, selfLon, selfLat);
+    },
+    addNavigatedMileage: function (VIN, selfLon, selfLat) {
+        const self = this;
+
+        CarController.setProvider(self.web3.currentProvider);
+        poi.calcMovedDistance(VIN, selfLon, selfLat, (distance) => {
+            CarController.deployed().then(function (instance) {
+                return instance.addNavigatedMileage(VIN, distance, { from: owner });
+            }).catch(function (e) {
+                console.log(e);
+            });
+        });
+    },
+    meetingCar: function (VIN, selfLon, selfLat) {
+        const self = this;
+
+        CarController.setProvider(self.web3.currentProvider);
+        poi.meetingCar(selfLon, selfLat, (poi) => {
+            if (!poi) {
+                return;
+            }
+
+            CarController.deployed().then(function (instance) {
+                return instance.meetCar(VIN, parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 300000 });
+            }).catch(function (e) {
+                console.log(e);
+            });
+        });
     }
 };

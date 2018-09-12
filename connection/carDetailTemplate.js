@@ -1,5 +1,5 @@
 module.exports = {
-    buildCarDetail: function (tokenId, bcm, level) { 
+    buildCarDetail: function (tokenId, bcm, navigatedMileage) {
         return `
             {
                 "location": "北京",
@@ -78,7 +78,7 @@ module.exports = {
                                 "color": "color_c07a",
                                 "text": "tokenId: ` + tokenId + `
                                         bcm: ` + bcm + `
-                                        level: ` + level + `"
+                                        navigatedMileage: ` + navigatedMileage + `"
                             }
                             ]
                         }
