@@ -85,7 +85,7 @@ module.exports = {
         );
 
         // self.addNavigatedMileage(VIN, selfLon, selfLat);
-        // self.meetingCar(VIN, selfLon, selfLat);
+        self.meetingCar(VIN, selfLon, selfLat);
     },
     addNavigatedMileage: function (VIN, selfLon, selfLat) {
         const self = this;
@@ -111,8 +111,8 @@ module.exports = {
 
             CarController.deployed().then(function (instance) {
                 notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", function(){});
-                console.log(poi);
-                return instance.meetCar(parseInt(VIN), parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 300000 });
+                console.log(parseInt(VIN), parseInt(poi[ 0 ][0]));
+                return instance.meetCar(parseInt(VIN), parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 30000000 });
             }).catch(function (e) {
                 console.log(e);
             });

@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 import "./CarToken.sol";
 
 contract CarController is CarToken {
-    event MeetingOtherCar(uint tokenId, uint otherTokenId, string otherCarUri);
+    event MeetingOtherCar(uint tokenId, uint otherTokenId);
 
     function addNavigatedMileage(uint _tokenId, uint _increasedMileage)
         external onlyOwner
@@ -15,6 +15,6 @@ contract CarController is CarToken {
         external onlyOwner
     {
         metCars[_tokenId].push(_otherTokenId);
-        emit MeetingOtherCar(_tokenId, _otherTokenId, tokenURI(_otherTokenId));
+        emit MeetingOtherCar(_tokenId, _otherTokenId);
     }
 }
