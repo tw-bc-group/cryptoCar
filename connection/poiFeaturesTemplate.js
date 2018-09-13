@@ -1,5 +1,6 @@
 const _ = require('lodash');
-const poiIcon = "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/cryptocar/car%20logo2.png";
+// const poiIcon = "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/cryptocar/car%20logo2.png";
+const poiIcon = "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png";
 module.exports = {
     poiIcon,
     buildFeatures: function (featuresData) {
