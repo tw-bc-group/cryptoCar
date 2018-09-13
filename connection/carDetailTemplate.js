@@ -47,8 +47,7 @@ module.exports = {
                                                 },
                                                 "horizontalAlignment": "center",
                                                 "width": 10
-                                            },
-                                            {}
+                                            }
                                         ]
                                     },
                                     {
