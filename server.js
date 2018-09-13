@@ -58,6 +58,7 @@ app.get('/features', (req, res) => {
         VIN = '10000';
     }
     truffle_connect.features(boundingbox, scale, position, heading, VIN, (data) => {
+        console.log(data);
         res.send(data);
     });
 });
