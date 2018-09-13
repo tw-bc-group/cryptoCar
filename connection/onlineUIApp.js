@@ -272,12 +272,12 @@ const myCollection_1 = () => {
 module.exports = {
     startApp: function () {
         const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_original_car1.png", null, null, null),
-                                                                            "My Car",
+                                                                            "Bumblebee",
                                                                             buildImage(null, null, null, null),
-                                                                            "Car property 1",
-                                                                            "Car property 2",
-                                                                            "My Crypto Car",
-                                                                            "Owner");
+                                                                            "CLA ...",
+                                                                            "0x95DC578D3C57900420beB5478faD20A94763504b",
+                                                                            "Bumblebee",
+                                                                            "Others");
         const featureListContents = [
             buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
             buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
