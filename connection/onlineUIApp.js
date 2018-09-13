@@ -306,7 +306,7 @@ module.exports = {
                                                 buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: ............", null),
                                                 buildOneLineButton(null, buildImage(null, null, null, null), "Gear: ............", null),
                                                 // buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                                buildFeatureList(featureListContents),
+                                                // buildFeatureList(featureListContents),
                                                 buildGallery(galleryContents)
                                             ]
                                         };
@@ -359,7 +359,7 @@ module.exports = {
                                             "rows": [
                                                 buildOneLineButton(null, buildImage(null, null, null, null), "contract Id ...", null),
                                                 buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                                // buildFeatureList(featureListContents),
+                                                buildFeatureList(featureListContents),
                                                 buildGallery(galleryContents)
                                             ]
                                         };
