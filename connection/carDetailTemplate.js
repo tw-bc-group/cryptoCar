@@ -36,50 +36,83 @@ module.exports = {
     buildCarDetail: function (tokenId, bcm, navigatedMileage) {
         car = carMap[tokenId];
         console.log("**** detail json ****", JSON.stringify(car));
-        return (
-            {
-                "location": "北京",
-                "addPOIinfos": [
-                    {
-                        "type": "subheader",
-                        "text": car.name
-                    },
-                    {
-                        "type": "row",
-                        "entries": [
-                            {
-                                "type": "column",
-                                "width": 100,
-                                "entries": [
-                                    {
-                                        "type": "row",
-                                        "entries": [
-                                            {
-                                                "type": "image",
-                                                "picture": {
-                                                    "base64": null,
-                                                    "url": car.imageName,
-                                                },
-                                                "horizontalAlignment": "right",
-                                                "width": 30
-                                            },
-                                            {
-                                                "type": "text",
-                                                "width": 70,
-                                                "verticalAlignment": "center",
-                                                "horizontalAlignment": "left",
-                                                "font": "f12",
-                                                "color": "color_c07a",
-                                                "text": "test!!!!!!!!!"
-                                            }
-                                        ]
-                                    },
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        );
+        const detail = {
+            "location": "北京",
+            "addPOIinfos": [ 
+                {
+                "type": "image",
+                "width": 100,
+                "height": 100,
+                "scale": 1,
+                "verticalAlignment": "top", 
+                "horizontalAlignment": "top", 
+                "picture": {
+                    "url": car.imageName,
+                    "base64": null,
+                    "asset": null,
+                    "uiImage": null
+                }
+                }, {
+                    "type": "row",
+                    "entries": [
+                        {
+                            "type": "text",
+                            "width": 100,
+                            "height": 100,
+                            "verticalAlignment": "center",
+                            "horizontalAlignment": "left",
+                            "font": "f12",
+                            "color": "color_c07a",
+                            "text": "Name: " + car.name + "\nClass: " + car.class + "\nToken Address: " + car.tokenAddress + "\nHorsepower: " + car.horsePower + "\nGear: " + car.gear
+                        }
+                    ]
+                }]
+        }
+        return detail;
+        // return (
+        //     {
+        //         "location": "北京",
+        //         "addPOIinfos": [
+        //             {
+        //                 "type": "subheader",
+        //                 "text": car.name
+        //             },
+        //             {
+        //                 "type": "row",
+        //                 "entries": [
+        //                     {
+        //                         "type": "column",
+        //                         "width": 100,
+        //                         "entries": [
+        //                             {
+        //                                 "type": "row",
+        //                                 "entries": [
+        //                                     {
+        //                                         "type": "image",
+        //                                         "picture": {
+        //                                             "base64": null,
+        //                                             "url": car.imageName,
+        //                                         },
+        //                                         "horizontalAlignment": "right",
+        //                                         "width": 30
+        //                                     },
+        //                                     {
+        //                                         "type": "text",
+        //                                         "width": 70,
+        //                                         "verticalAlignment": "center",
+        //                                         "horizontalAlignment": "left",
+        //                                         "font": "f12",
+        //                                         "color": "color_c07a",
+        //                                         "text": "test!!!!!!!!!"
+        //                                     }
+        //                                 ]
+        //                             },
+        //                         ]
+        //                     }
+        //                 ]
+        //             }
+        //         ]
+        //     }
+        // );
     }
 };
