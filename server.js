@@ -47,6 +47,13 @@ app.get('/features', (req, res) => {
     const { boundingbox, scale, position} = req.query;
     console.log(req.query);
     console.log(position);
+    if (!position) {
+        console.log('no possition');
+        return;
+    }
+
+    let [lat, lont] = position.split(',').map(i => parseFloat(i));
+
     // const { boundingbox, scale, position, heading, VIN } = req.query;
     // console.log(position);
     // truffle_connect.features(boundingbox, scale, position, heading, VIN, (data) => {
@@ -63,8 +70,8 @@ app.get('/features', (req, res) => {
                         "points": [
                             {
                                 "location": [
-                                    39.959683,
-                                    116.50709
+                                    lat+0.001,
+                                    lont+0.001
                                 ],
                                 "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
                                 "isAccess": true
@@ -95,8 +102,8 @@ app.get('/features', (req, res) => {
                         "points": [
                             {
                                 "location": [
-                                    39.963049,
-                                    116.504874
+                                    lat+0.002,
+                                    lont-0.001
                                 ],
                                 "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
                                 "isAccess": true
@@ -127,6 +134,7 @@ app.get('/features', (req, res) => {
                         "points": [
                             {
                                 "location": [
+                                    //Tiananmen
                                     39.9087,
                                     116.3975
                                 ],
