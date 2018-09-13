@@ -8,6 +8,17 @@ const buildOneLineButton = (elementId, iconImage, primaryText, actionIcon) =>  {
             };
 }
 
+const buildTwoLineButton = (image, primaryText, secondaryText, actionIcon, useOneFont) => {
+    return {
+                "type": "twoLineButton",
+                "image": image, 
+                "primaryText": primaryText, 
+                "secondaryText": secondaryText, 
+                "actionIcon": actionIcon, 
+                "useOneFont": useOneFont
+            };
+}
+
 const buildImage = (url, base64, asset, uiImage) => {
     return {
         "url": url,
@@ -59,14 +70,7 @@ const myCarEntry_DetailEntry = {
                                     "favouritesButton": null,
                                     "rows": [
                                         buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
-                                    {
-                                        "type": "twoLineButton",
-                                        "image": buildImage(null, null, null, null), 
-                                        "primaryText": "Primary Text", 
-                                        "secondaryText": "Secondary Text", 
-                                        "actionIcon": null, 
-                                        "useOneFont": true
-                                    },
+                                        buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
                                     {
                                         "type": "featureList",
                                         "content":[
@@ -106,11 +110,13 @@ const myCarEntry = {
                         "carouselEntry": myCarEntry_CarouselEntry,
                         "detailsEntry": myCarEntry_DetailEntry
                     }
+
 const myCarEntryNew = {
                         "id": "carouselEntry01",
                         "carouselEntry": myCarEntry_CarouselEntry_New,
                         "detailsEntry": myCarEntry_DetailEntry
                     }
+
 const newTab = (title, entries) => {
     return {
                 "title": title,
