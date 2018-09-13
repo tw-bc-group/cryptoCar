@@ -21,8 +21,9 @@ module.exports = {
                     'points': [
                         {
                             'location': [
-                                parseFloat(data[ 1 ][ 1 ]),
-                                parseFloat(data[ 1 ][ 0 ])
+                                // Note: LBS give the lat as first, lon as second
+                                parseFloat(data[1][0]),
+                                parseFloat(data[1][1])
                             ],
                             'isAccess': true
                         }
