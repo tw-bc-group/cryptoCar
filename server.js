@@ -73,6 +73,7 @@ app.get('/features', (req, res) => {
                             "lastModified": "2018-07-12T10:00:35.977Z"
                         }
                     },
+                    "mapFeatureType": "lbs-aop",
                     "isDestination": true,
                     "isSelectable": true
                 },
@@ -110,6 +111,7 @@ app.get('/features', (req, res) => {
                             "lastModified": "2018-07-12T10:00:35.977Z"
                         }
                     },
+                    "mapFeatureType": "lbs-aop",
                     "isDestination": true,
                     "isSelectable": true
                 }
