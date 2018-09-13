@@ -195,6 +195,12 @@ app.get('/details/:id', (req, res) => {
     res.send(carDetailTemplate.buildCarDetail('tokenID123', 'bcm', '2222222'))
 });
 
+app.get('/mockCars', (req, res) => {
+    console.log('**** GET / mock cars ****');
+    truffle_connect.mockCars();
+    res.send('ok');
+});
+
 app.listen(port, () => {
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     truffle_connect.web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
