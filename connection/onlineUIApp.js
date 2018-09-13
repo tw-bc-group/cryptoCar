@@ -121,6 +121,7 @@ const myCollection_2 = () => {
                                         "voiceMessage": "Provided by ThoughtWorks", 
                                         "favouritesButton": null,
                                         "rows": [
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Collect gene!", null),
                                             buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x584F5088D9f10507EBf2f8B4137BD6ceb6EE19D0", null, false),
                                             buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 211", null),
                                             buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
@@ -137,12 +138,12 @@ const myCollection_2 = () => {
 
 const myCollection_3 = () => {
     const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/other_car2.jpg", null, null, null),
-                                                                            "My Collect Car",
+                                                                            "Ratchet",
                                                                             buildImage(null, null, null, null),
-                                                                            "Car property 1",
-                                                                            "Car property 2",
-                                                                            "My Crypto Car",
-                                                                            "Owner");
+                                                                            "AMG G 63",
+                                                                            "0x758C03dA979C252F74684c110FB8814F70c8fC61",
+                                                                            "Ratchet",
+                                                                            "Others");
     const featureListContents = [
         buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
         buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
@@ -158,16 +159,17 @@ const myCollection_3 = () => {
     
     const myCarEntry_DetailEntry = {
                                         "type": "locationBased",
-                                        "title": "My Car",
-                                        "subtitle": "Description 1", 
+                                        "title": "Ratchet",
+                                        "subtitle": "AMG G 63", 
                                         "headerImage": buildImage("http://42.159.6.37:3000/images/other_car2.jpg", null, null, null),
                                         "starsImage": buildImage(null, null, null, null), 
                                         "voiceMessage": "Provided by ThoughtWorks", 
                                         "favouritesButton": null,
                                         "rows": [
                                             buildOneLineButton(null, buildImage(null, null, null, null), "Collect gene!", null),
-                                            buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                            buildFeatureList(featureListContents),
+                                            buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x758C03dA979C252F74684c110FB8814F70c8fC61", null, false),
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 585", null),
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
                                             buildGallery(galleryContents)
                                         ]
                                     };
@@ -181,12 +183,12 @@ const myCollection_3 = () => {
 
 const myCollection_4 = () => {
     const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/other_car3.jpg", null, null, null),
-                                                                            "My Collect Car",
+                                                                            "Cliffjumper",
                                                                             buildImage(null, null, null, null),
-                                                                            "Car property 1",
-                                                                            "Car property 2",
-                                                                            "My Crypto Car",
-                                                                            "Owner");
+                                                                            "AMG GT S",
+                                                                            "0xfBa844EA3dA516C3538AfF81425adddfa7d392be",
+                                                                            "Cliffjumper",
+                                                                            "Others");
     const featureListContents = [
         buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
         buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
@@ -202,16 +204,17 @@ const myCollection_4 = () => {
     
     const myCarEntry_DetailEntry = {
                                         "type": "locationBased",
-                                        "title": "My Car",
-                                        "subtitle": "Description 1", 
+                                        "title": "Cliffjumper",
+                                        "subtitle": "AMG GT S", 
                                         "headerImage": buildImage("http://42.159.6.37:3000/images/other_car3.jpg", null, null, null),
                                         "starsImage": buildImage(null, null, null, null), 
                                         "voiceMessage": "Provided by ThoughtWorks", 
                                         "favouritesButton": null,
                                         "rows": [
                                             buildOneLineButton(null, buildImage(null, null, null, null), "Collect gene!", null),
-                                            buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                            buildFeatureList(featureListContents),
+                                            buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0xfBa844EA3dA516C3538AfF81425adddfa7d392be", null, false),
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 522", null),
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
                                             buildGallery(galleryContents)
                                         ]
                                     };
