@@ -90,38 +90,6 @@ const refreshPageEvent = (elementName) => {
             }
 }
 
-const featureListContents = [
-    buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
-    buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
-    buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
-    buildFeatureListContent("Badge 4", buildImage(null, null, "navigation/direction_arrow_01", null)),
-    buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
-    buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
-]
-
-const galleryContents = [
-                            buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
-                            buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
-                            buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null)
-                        ]
-
-const myCarEntry_DetailEntry = {
-                                    "type": "locationBased",
-                                    "title": "My Car",
-                                    "subtitle": "Description 1", 
-                                    "headerImage": buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null),
-                                    "starsImage": buildImage(null, null, null, null), 
-                                    "voiceMessage": "Provided by ThoughtWorks", 
-                                    "favouritesButton": null,
-                                    "rows": [
-                                        buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
-                                        buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                        buildFeatureList(featureListContents),
-                                        buildGallery(galleryContents)
-                                    ]
-                                }
-                                
-
 module.exports = {
     startApp: function () {
         const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
@@ -131,13 +99,42 @@ module.exports = {
                                                                             "Car property 2",
                                                                             "My Crypto Car",
                                                                             "Owner");
+        const featureListContents = [
+            buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 4", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        ];
+        
+        const galleryContents = [
+                                    buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
+                                    buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
+                                    buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null)
+                                ];
+        
+        const myCarEntry_DetailEntry = {
+                                            "type": "locationBased",
+                                            "title": "My Car",
+                                            "subtitle": "Description 1", 
+                                            "headerImage": buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null),
+                                            "starsImage": buildImage(null, null, null, null), 
+                                            "voiceMessage": "Provided by ThoughtWorks", 
+                                            "favouritesButton": null,
+                                            "rows": [
+                                                buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
+                                                buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
+                                                buildFeatureList(featureListContents),
+                                                buildGallery(galleryContents)
+                                            ]
+                                        };
 
         const myCarEntry = {
                         "id": "carouselEntry01",
                         "carouselEntry": myCarEntry_CarouselEntry,
                         "detailsEntry": myCarEntry_DetailEntry
-                    }
-
+                    };
 
         return ({
             "widgetData": {
@@ -154,6 +151,37 @@ module.exports = {
                                                                             "Car property 2 new one",
                                                                             "My Crypto Car new one",
                                                                             "Owner new one");
+
+        const featureListContents = [
+            buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 4", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
+            buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        ];
+        
+        const galleryContents = [
+                                    buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
+                                    buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
+                                    buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null)
+                                ];
+        
+        const myCarEntry_DetailEntry = {
+                                            "type": "locationBased",
+                                            "title": "My Car",
+                                            "subtitle": "Description 1", 
+                                            "headerImage": buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null),
+                                            "starsImage": buildImage(null, null, null, null), 
+                                            "voiceMessage": "Provided by ThoughtWorks", 
+                                            "favouritesButton": null,
+                                            "rows": [
+                                                buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
+                                                buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
+                                                buildFeatureList(featureListContents),
+                                                buildGallery(galleryContents)
+                                            ]
+                                        };
 
         const myCarEntryNew = {
                         "id": "carouselEntry01",
