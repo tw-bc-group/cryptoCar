@@ -86,7 +86,7 @@ module.exports = {
 
         notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", function(){});
 
-        self.addNavigatedMileage(VIN, selfLon, selfLat);
+        // self.addNavigatedMileage(VIN, selfLon, selfLat);
         // self.meetingCar(VIN, selfLon, selfLat);
     },
     addNavigatedMileage: function (VIN, selfLon, selfLat) {
