@@ -6,20 +6,28 @@ const buildImage = (url, base64, asset, uiImage) => {
         "uiImage": uiImage
     };
 }
+const create_MyCarEntry_CarouselEntry = (mainImage, title, starsImage, subtitle1, subtitle2, imageHeader, imageFooter) => {
+    return {
+                "voiceMessage": "Provided by ThoughtWorks",
+                "image": mainImage,
+                "title": title,
+                "starsImageEntryKeepSize": null, 
+                "starsImageDescriptionKeepSize": null, 
+                "starsImage": starsImage,
+                "reviews": null,
+                "subtitle1": subtitle1,
+                "subtitle2": subtitle2,
+                "imageHeader": imageHeader,
+                "imageFooter": imageFooter
+            }}
 
-const myCarEntry_CarouselEntry = {
-                                    "voiceMessage": "Provided by ThoughtWorks",
-                                    "image": buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null), // Notation: This is for show the car image
-                                    "title": "My Car",
-                                    "starsImageEntryKeepSize": null, 
-                                    "starsImageDescriptionKeepSize": null, 
-                                    "starsImage": buildImage(null, null, null, null), // Notation: This is for reviewer, which means this is actually shows the star.
-                                    "reviews": null,
-                                    "subtitle1": "Car property 1",
-                                    "subtitle2": "Car property 2",
-                                    "imageHeader": "My Crypto Car",
-                                    "imageFooter": "Owner"
-                                }
+const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
+                                                                            "My Car",
+                                                                            buildImage(null, null, null, null),
+                                                                            "Car property 1",
+                                                                            "Car property 2",
+                                                                            "My Crypto Car",
+                                                                            "Owner");
 
 const myCarEntry_DetailEntry = {
                                     "type": "locationBased",
@@ -28,19 +36,6 @@ const myCarEntry_DetailEntry = {
                                     "headerImage": buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
                                     "starsImage": buildImage(null, null, null, null), 
                                     "voiceMessage": "Provided by ThoughtWorks", 
-                                    // "favouritesButton": {
-                                        // "id": "favouritesButton_00", 
-                                        // "icon": {}, 
-                                        // "deletePopup": {
-                                        //     "message": "Do you want to delete this?",
-                                        //     "yesButton": {
-                                        //         "text": "Yes"
-                                        //     },
-                                        //     "noButton": {
-                                        //         "text": "No"
-                                        //     } 
-                                        // }
-                                    // },
                                     "favouritesButton": null,
                                     "rows": [{
                                         "id": "contractId", // Notation: If you just want to show the text in it, you actually don't need to set ID for it.
@@ -50,7 +45,6 @@ const myCarEntry_DetailEntry = {
                                         "actionIcon": null
                                     },
                                     {
-                                        // "id": "buttonID02", // Notation: If you just want to show the text in it, you actually don't need to set ID for it.
                                         "type": "twoLineButton",
                                         "image": buildImage(null, null, null, null), 
                                         "primaryText": "Primary Text", 
