@@ -6,6 +6,7 @@ const truffle_connect = require('./connection/app.js');
 const notify = require('./connection/notify');
 const bodyParser = require('body-parser');
 const carDetailTemplate = require('./connection/carDetailTemplate');
+const onlineUIApp = require('./connection/onlineUIApp');
 
 
 // parse application/x-www-form-urlencoded
@@ -32,6 +33,12 @@ app.post('/notify', (req, res) => {
     console.log('**** POST /notify ****');
     notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", (requestBody) => res.send(requestBody));
     // notify.notifyCarsOwner("CRYPTOCAR", "WDD217LJ4XG002440", (requestBody) => res.send(requestBody));
+});
+
+app.post('/app', (req, res) => {
+    console.log('**** POST /app ****');
+
+    res.send(onlineUIApp.startApp());
 });
 
 app.get('/features', (req, res) => {
