@@ -225,12 +225,12 @@ const myCollection_4 = () => {
 
 const myCollection_1 = () => {
     const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_guest_car1.png", null, null, null),
-                                                                            "My Collect Car",
+                                                                            "Optimus Prime",
                                                                             buildImage(null, null, null, null),
-                                                                            "Car property 1",
-                                                                            "Car property 2",
-                                                                            "My Crypto Car",
-                                                                            "Owner");
+                                                                            "V 260 L",
+                                                                            "0x9958b1503D238A2CD0C2b51026344ec0231c7EB0",
+                                                                            "Optimus Prime",
+                                                                            "Others");
     const featureListContents = [
         buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
         buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
@@ -256,9 +256,9 @@ const myCollection_1 = () => {
                                         "favouritesButton": null,
                                         "rows": [
                                             buildOneLineButton("collectGene", buildImage(null, null, null, null), "Collect gene!", null),
-                                            buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                            buildFeatureList(featureListContents),
-                                            buildGallery(galleryContents)
+                                            buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x9958b1503D238A2CD0C2b51026344ec0231c7EB0", null, false),
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 211", null),
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
                                         ]
                                     };
 
@@ -371,7 +371,7 @@ module.exports = {
 
         return ({
             "widgetData": {
-                "tabs": [newTab("My Crypto Car", [myCarEntryNew]), newTab("Collection", [myCollection_2(), myCollection_3(), myCollection_4(), myCollection_1()])]
+                "tabs": [newTab("My Crypto Car", [myCarEntryNew]), newTab("Collection", [myCollection_2(), myCollection_3(), myCollection_1(), myCollection_4()])]
             },
             "events": [refreshPageEvent("collectGene")]
         });
