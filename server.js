@@ -4,6 +4,8 @@ const port = 3000 || process.env.PORT;
 const Web3 = require('web3');
 const truffle_connect = require('./connection/app.js');
 const bodyParser = require('body-parser');
+const carDetailTemplate = require('./connection/carDetailTemplate');
+
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -36,6 +38,7 @@ app.get('/features', (req, res) => {
     // truffle_connect.features(boundingbox, scale, position, heading, VIN, (data) => {
     //     res.send(data);
     // });
+
 
     const result =
         {
@@ -150,7 +153,8 @@ app.get('/details/:id', (req, res) => {
     console.log('**** GET / POI detail ****');
     const carId = req.params.id;
     console.log(carId)
-    truffle_connect.detail(carId, (carInfo) => res.send(carInfo));
+    // truffle_connect.detail(carId, (carInfo) => res.send(carInfo));
+    res.send(carDetailTemplate.buildCarDetail('tokenID123', 'bcm', '2222222'))
 });
 
 app.listen(port, () => {
