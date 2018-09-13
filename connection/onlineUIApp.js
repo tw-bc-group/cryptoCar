@@ -102,14 +102,14 @@ const featureListContents = [
 const galleryContents = [
                             buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
                             buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
-                            buildImage("http://42.159.6.37:3000/images/carpic8.png", null, null, null)
+                            buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null)
                         ]
 
 const myCarEntry_DetailEntry = {
                                     "type": "locationBased",
                                     "title": "My Car",
                                     "subtitle": "Description 1", 
-                                    "headerImage": buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
+                                    "headerImage": buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null),
                                     "starsImage": buildImage(null, null, null, null), 
                                     "voiceMessage": "Provided by ThoughtWorks", 
                                     "favouritesButton": null,
@@ -147,7 +147,7 @@ module.exports = {
         });
     },
     refreshPage: function () {
-        const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
+        const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null),
                                                                             "My Car Upgrade",
                                                                             buildImage(null, null, null, null),
                                                                             "Car property 1 new one",
