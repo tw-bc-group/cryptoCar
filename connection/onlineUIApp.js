@@ -64,21 +64,31 @@ const create_MyCarEntry_CarouselEntry = (mainImage, title, starsImage, subtitle1
             };
 }
 
-const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
-                                                                            "My Car",
-                                                                            buildImage(null, null, null, null),
-                                                                            "Car property 1",
-                                                                            "Car property 2",
-                                                                            "My Crypto Car",
-                                                                            "Owner");
+const newTab = (title, entries) => {
+    return {
+                "title": title,
+                "emptyListText": "No matched car",
+                "providedByText": "Provided by ThoughtWorks", // Notation: If just has one tab, then the provided text will show on the title
+                "providedByText": "Crypto Car",
+                "providedByLogo": null,
+                "leftLogo": null,
+                "entries": entries
+            }
+}
 
-const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
-                                                                            "My Car Upgrade",
-                                                                            buildImage(null, null, null, null),
-                                                                            "Car property 1 new one",
-                                                                            "Car property 2 new one",
-                                                                            "My Crypto Car new one",
-                                                                            "Owner new one");
+const refreshPageEvent = (elementName) => {
+    return {
+            "elementName": elementName,
+            "actions": [{"type": "ONLINE_UIACTIONS_UPDATE_WIDGET",
+                        "arguments": {
+                        "restRequest": {
+                            "body": null,
+                            "path": "/sequence/0/refresh",
+                            "requestParameter": null,
+                            "type": "Post"
+                        }}}]
+            }
+}
 
 const featureListContents = [
     buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
@@ -111,46 +121,24 @@ const myCarEntry_DetailEntry = {
                                     ]
                                 }
                                 
-const myCarEntry = {
+
+module.exports = {
+    startApp: function () {
+        const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
+                                                                            "My Car",
+                                                                            buildImage(null, null, null, null),
+                                                                            "Car property 1",
+                                                                            "Car property 2",
+                                                                            "My Crypto Car",
+                                                                            "Owner");
+
+        const myCarEntry = {
                         "id": "carouselEntry01",
                         "carouselEntry": myCarEntry_CarouselEntry,
                         "detailsEntry": myCarEntry_DetailEntry
                     }
 
-const myCarEntryNew = {
-                        "id": "carouselEntry01",
-                        "carouselEntry": myCarEntry_CarouselEntry_New,
-                        "detailsEntry": myCarEntry_DetailEntry
-                    }
 
-const newTab = (title, entries) => {
-    return {
-                "title": title,
-                "emptyListText": "No matched car",
-                "providedByText": "Provided by ThoughtWorks", // Notation: If just has one tab, then the provided text will show on the title
-                "providedByText": "Crypto Car",
-                "providedByLogo": null,
-                "leftLogo": null,
-                "entries": entries
-            }
-}
-
-const refreshPageEvent = (elementName) => {
-    return {
-            "elementName": elementName,
-            "actions": [{"type": "ONLINE_UIACTIONS_UPDATE_WIDGET",
-                        "arguments": {
-                        "restRequest": {
-                            "body": null,
-                            "path": "/sequence/0/refresh",
-                            "requestParameter": null,
-                            "type": "Post"
-                        }}}]
-            }
-}
-
-module.exports = {
-    startApp: function () {
         return ({
             "widgetData": {
                 "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCarEntry, myCarEntry])]
@@ -159,6 +147,20 @@ module.exports = {
         });
     },
     refreshPage: function () {
+        const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
+                                                                            "My Car Upgrade",
+                                                                            buildImage(null, null, null, null),
+                                                                            "Car property 1 new one",
+                                                                            "Car property 2 new one",
+                                                                            "My Crypto Car new one",
+                                                                            "Owner new one");
+
+        const myCarEntryNew = {
+                        "id": "carouselEntry01",
+                        "carouselEntry": myCarEntry_CarouselEntry_New,
+                        "detailsEntry": myCarEntry_DetailEntry
+                    }
+
         return ({
             "widgetData": {
                 "tabs": [newTab("My Crypto Car", [myCarEntryNew]), newTab("Collection", [myCarEntryNew, myCarEntryNew])]
