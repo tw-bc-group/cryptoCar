@@ -93,12 +93,12 @@ const refreshPageEvent = (elementName) => {
 
 const myCollection_2 = () => {
     const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/other_car1.jpg", null, null, null),
-                                                                            "My Collect Car",
+                                                                            "Ironhide",
                                                                             buildImage(null, null, null, null),
-                                                                            "Car property 1",
-                                                                            "Car property 2",
-                                                                            "My Crypto Car",
-                                                                            "Owner");
+                                                                            "V 260 AMG",
+                                                                            "0x584F5088D9f10507EBf2f8B4137BD6ceb6EE19D0",
+                                                                            "Ironhide",
+                                                                            "Others");
     const featureListContents = [
         buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
         buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
@@ -114,16 +114,16 @@ const myCollection_2 = () => {
     
     const myCarEntry_DetailEntry = {
                                         "type": "locationBased",
-                                        "title": "My Car",
-                                        "subtitle": "Description 1", 
+                                        "title": "Ironhide",
+                                        "subtitle": "V 260 AMG", 
                                         "headerImage": buildImage("http://42.159.6.37:3000/images/other_car1.jpg", null, null, null),
                                         "starsImage": buildImage(null, null, null, null), 
                                         "voiceMessage": "Provided by ThoughtWorks", 
                                         "favouritesButton": null,
                                         "rows": [
-                                            buildOneLineButton(null, buildImage(null, null, null, null), "Collect gene!", null),
-                                            buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                            buildFeatureList(featureListContents),
+                                            buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x584F5088D9f10507EBf2f8B4137BD6ceb6EE19D0", null, false),
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 211", null),
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
                                             buildGallery(galleryContents)
                                         ]
                                     };
@@ -248,8 +248,8 @@ const myCollection_1 = () => {
     
     const myCarEntry_DetailEntry = {
                                         "type": "locationBased",
-                                        "title": "My Car",
-                                        "subtitle": "Description 1", 
+                                        "title": "Optimus Prime",
+                                        "subtitle": "V 260 L", 
                                         "headerImage": buildImage("http://42.159.6.37:3000/images/my_guest_car1.png", null, null, null),
                                         "starsImage": buildImage(null, null, null, null), 
                                         "voiceMessage": "Provided by ThoughtWorks", 
@@ -297,7 +297,7 @@ module.exports = {
         const myCarEntry_DetailEntry = {
                                             "type": "locationBased",
                                             "title": "Bumblebee",
-                                            "subtitle": "CLA ...", 
+                                            "subtitle": "AMG CLA 454MATIC", 
                                             "headerImage": buildImage("http://42.159.6.37:3000/images/my_original_car1.png", null, null, null),
                                             "starsImage": buildImage(null, null, null, null), 
                                             "voiceMessage": "Provided by ThoughtWorks", 
@@ -351,8 +351,8 @@ module.exports = {
         
         const myCarEntry_DetailEntry = {
                                             "type": "locationBased",
-                                            "title": "My Car",
-                                            "subtitle": "Description 1", 
+                                            "title": "Super Bumblebee",
+                                            "subtitle": "AMG CLA 454MATIC", 
                                             "headerImage": buildImage("http://42.159.6.37:3000/images/my_upgraded_car1.png", null, null, null),
                                             "starsImage": buildImage(null, null, null, null), 
                                             "voiceMessage": "Provided by ThoughtWorks", 
