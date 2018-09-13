@@ -38,6 +38,9 @@ app.post('/notify', (req, res) => {
 app.post('/app', (req, res) => {
     console.log('**** POST /app ****');
 
+    if(req.query){
+        res.send(onlineUIApp.refreshApp());
+    }
     res.send(onlineUIApp.startApp());
 });
 
