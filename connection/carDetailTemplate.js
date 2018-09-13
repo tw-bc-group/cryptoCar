@@ -42,7 +42,7 @@ module.exports = {
                 "addPOIinfos": [
                     {
                         "type": "subheader",
-                        "text": "CryptoCar Details"
+                        "text": car.name
                     },
                     {
                         "type": "row",
@@ -57,7 +57,8 @@ module.exports = {
                                             {
                                                 "type": "image",
                                                 "picture": {
-                                                    "base64": ""
+                                                    "base64": null,
+                                                    "url": car.imageName,
                                                 },
                                                 "horizontalAlignment": "right",
                                                 "width": 30
@@ -69,52 +70,10 @@ module.exports = {
                                                 "horizontalAlignment": "left",
                                                 "font": "f12",
                                                 "color": "color_c07a",
-                                                "text": "这里是内嵌entry text"
+                                                "text": "test!!!!!!!!!"
                                             }
                                         ]
                                     },
-                                    {
-                                        "type": "row",
-                                        "entries": [
-                                            {
-                                                "type": "image",
-                                                "picture": {
-                                                    "base64": ""
-                                                },
-                                                "horizontalAlignment": "center",
-                                                "width": 10
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "type": "text",
-                                        "width": 90,
-                                        "verticalAlignment": "center",
-                                        "horizontalAlignment": "left",
-                                        "font": "f12",
-                                        "color": "color_c07a",
-                                        "text": "周一至周日\n00:00-21:00",
-                                        "type": "row",
-                                        "entries": [
-                                            {
-                                                "type": "image",
-                                                "picture": {
-                                                    "base64": ""
-                                                },
-                                                "horizontalAlignment": "center",
-                                                "width": 10
-                                            },
-                                            {
-                                                "type": "text",
-                                                "width": 90,
-                                                "verticalAlignment": "center",
-                                                "horizontalAlignment": "left",
-                                                "font": "f12",
-                                                "color": "color_c07a",
-                                                "text": "tokenId: " + tokenId + "\nbcm: " + bcm + "\nnavigatedMileage: " + navigatedMileage 
-                                            }
-                                        ]
-                                    }
                                 ]
                             }
                         ]
