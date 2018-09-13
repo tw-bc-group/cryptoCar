@@ -75,7 +75,7 @@ module.exports = {
                 "addPOIinfos": [
                     {
                         "type": "subheader",
-                        "text": car.name
+                        "text": "Detail"
                     },
                     {
                         "type": "row",
@@ -91,7 +91,7 @@ module.exports = {
                                                 "type": "image",
                                                 "picture": {
                                                     "base64": null,
-                                                    "url": car.imageName,
+                                                    "url": null,
                                                 },
                                                 "verticalAlignment": "top",
                                                 "horizontalAlignment": "left",
