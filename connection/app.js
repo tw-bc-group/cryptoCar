@@ -84,9 +84,7 @@ module.exports = {
             (pois) => callback(poiFeaturesTemplate.buildFeatures(pois))
         );
 
-        notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", function(){});
-
-        self.addNavigatedMileage(VIN, selfLon, selfLat);
+        // self.addNavigatedMileage(VIN, selfLon, selfLat);
         // self.meetingCar(VIN, selfLon, selfLat);
     },
     addNavigatedMileage: function (VIN, selfLon, selfLat) {
@@ -107,11 +105,13 @@ module.exports = {
 
         CarController.setProvider(self.web3.currentProvider);
         poi.meetingCar(VIN, selfLon, selfLat, (poi) => {
-            if (!poi) {
+            if (_.isEmpty(poi)) {
                 return;
             }
 
             CarController.deployed().then(function (instance) {
+                notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", function(){});
+                console.log(poi);
                 return instance.meetCar(parseInt(VIN), parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 300000 });
             }).catch(function (e) {
                 console.log(e);

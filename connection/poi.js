@@ -37,7 +37,7 @@ module.exports = {
         });
     },
     meetingCar: (VIN, selfLon, selfLat, callback) => {
-        client.georadius(KEY_NAME, selfLon, selfLat, 1, 'km', 'WITHCOORD', 'ASC', 'COUNT', 2, (error, pois) => {
+        client.georadius(KEY_NAME, selfLon, selfLat, 20, 'km', 'WITHCOORD', 'ASC', 'COUNT', 2, (error, pois) => {
             if (error) {
                 console.log(error);
             }
