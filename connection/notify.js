@@ -16,12 +16,12 @@ const notifyData = {
                         "id":1,
                         "text":[{
                             "languageCode": "default",
-                            "text": "show widget"
+                            "text": "Open Crypto Car"
                         }]
                     }],
                     "message": [{
-                        "primaryText": "crypto car from code with open app function",
-                        "secondaryText": "test notification from code with open app function"
+                        "primaryText": "You meet one player.",
+                        "secondaryText": "from Crypto Car."
                     }]
                 },
                 "timeDefinition": {
