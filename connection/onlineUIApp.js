@@ -6,6 +6,7 @@ const buildImage = (url, base64, asset, uiImage) => {
         "uiImage": uiImage
     };
 }
+
 const myCarEntry_CarouselEntry = {
                                     "voiceMessage": "Provided by ThoughtWorks",
                                     "image": buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null), // Notation: This is for show the car image
@@ -19,6 +20,7 @@ const myCarEntry_CarouselEntry = {
                                     "imageHeader": "My Crypto Car",
                                     "imageFooter": "Owner"
                                 }
+
 const myCarEntry_DetailEntry = {
                                     "type": "locationBased",
                                     "title": "My Car",
@@ -89,11 +91,13 @@ const myCarEntry_DetailEntry = {
                                         ]
                                     }]
                                 }
+                                
 const myCarEntry = {
                         "id": "carouselEntry01",
                         "carouselEntry": myCarEntry_CarouselEntry,
                         "detailsEntry": myCarEntry_DetailEntry
                     }
+
 module.exports = {
     startApp: function () {
         return ({
