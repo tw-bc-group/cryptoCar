@@ -98,27 +98,23 @@ const myCarEntry = {
                         "detailsEntry": myCarEntry_DetailEntry
                     }
 
+const newTab = (title, entries) => {
+    return {
+                "title": title,
+                "emptyListText": "No matched car",
+                "providedByText": "Provided by ThoughtWorks", // Notation: If just has one tab, then the provided text will show on the title
+                "providedByText": "Crypto Car",
+                "providedByLogo": null,
+                "leftLogo": null,
+                "entries": entries
+            }
+}
+
 module.exports = {
     startApp: function () {
         return ({
             "widgetData": {
-                "tabs": [{
-                    "title": "Crypto Car",
-                    "emptyListText": "No matched car",
-                    "providedByText": "Provided by ThoughtWorks", // Notation: If just has one tab, then the provided text will show on the title
-                    "providedByText": "Crypto Car",
-                    "providedByLogo": null,
-                    "leftLogo": null,
-                    "entries": [myCarEntry, myCarEntry]
-                },{
-                    "title": "History",
-                    "emptyListText": "No matched car",
-                    "providedByText": "Provided by ThoughtWorks", // Notation: If just has one tab, then the provided text will show on the title
-                    "providedByText": "Crypto Car",
-                    "providedByLogo": null,
-                    "leftLogo": null,
-                    "entries": [myCarEntry, myCarEntry]
-                }]
+                "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCarEntry, myCarEntry])]
             },
             "events": [{
                 "elementName": "contractId",
