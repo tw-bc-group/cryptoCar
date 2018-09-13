@@ -40,10 +40,6 @@ module.exports = {
             "location": "北京",
             "addPOIinfos": [ 
                 {
-                    "type": "subheader",
-                    "text": "DETAILS"
-              },
-                {
                 "type": "image",
                 "width": 100,
                 "height": 100,
@@ -72,51 +68,51 @@ module.exports = {
                     ]
                 }]
         }
-        return (detail);
-        // return (
-        //     {
-        //         "location": "北京",
-        //         "addPOIinfos": [
-        //             {
-        //                 "type": "subheader",
-        //                 "text": car.name
-        //             },
-        //             {
-        //                 "type": "row",
-        //                 "entries": [
-        //                     {
-        //                         "type": "column",
-        //                         "width": 100,
-        //                         "entries": [
-        //                             {
-        //                                 "type": "row",
-        //                                 "entries": [
-        //                                     {
-        //                                         "type": "image",
-        //                                         "picture": {
-        //                                             "base64": null,
-        //                                             "url": car.imageName,
-        //                                         },
-        //                                         "horizontalAlignment": "right",
-        //                                         "width": 30
-        //                                     },
-        //                                     {
-        //                                         "type": "text",
-        //                                         "width": 70,
-        //                                         "verticalAlignment": "center",
-        //                                         "horizontalAlignment": "left",
-        //                                         "font": "f12",
-        //                                         "color": "color_c07a",
-        //                                         "text": "test!!!!!!!!!"
-        //                                     }
-        //                                 ]
-        //                             },
-        //                         ]
-        //                     }
-        //                 ]
-        //             }
-        //         ]
-        //     }
-        // );
+        // return detail;
+        return (
+            {
+                "location": "北京",
+                "addPOIinfos": [
+                    {
+                        "type": "subheader",
+                        "text": car.name
+                    },
+                    {
+                        "type": "row",
+                        "entries": [
+                            {
+                                "type": "column",
+                                "width": 100,
+                                "entries": [
+                                    {
+                                        "type": "row",
+                                        "entries": [
+                                            {
+                                                "type": "image",
+                                                "picture": {
+                                                    "base64": null,
+                                                    "url": car.imageName,
+                                                },
+                                                "verticalAlignment": "top",
+                                                "horizontalAlignment": "left",
+                                            },
+                                            {
+                                                "type": "text",
+                                                "width": 70,
+                                                "verticalAlignment": "center",
+                                                "horizontalAlignment": "left",
+                                                "font": "f12",
+                                                "color": "color_c07a",
+                                                "text": "test!!!!!!!!!"
+                                            }
+                                        ]
+                                    },
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        );
     }
 };
