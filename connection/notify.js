@@ -5,9 +5,23 @@ const notifyData = {
                 "category": "Poi",
                 "finOrVin": "LE43X8HB6KZ000013",
                 "notification": {
+                    "actions": [{
+                        "showWidArguments":{
+                            "restRequest":{
+                                "body": null,
+                                "path": "/sequence/0",
+                                "requestParameter": null
+                            } 
+                        },
+                        "id":1,
+                        "text":[{
+                            "languageCode": "default",
+                            "text": "show widget"
+                        }]
+                    }],
                     "message": [{
-                        "primaryText": "crypto car from code",
-                        "secondaryText": "test notification from code"
+                        "primaryText": "crypto car from code with open app function",
+                        "secondaryText": "test notification from code with open app function"
                     }]
                 },
                 "timeDefinition": {
