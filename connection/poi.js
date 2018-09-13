@@ -45,7 +45,7 @@ module.exports = {
             if(!pois){
                 return;
             }
-            pois = _.filter(pois, (poi) => { return VIN !== poi[0]});
+            // pois = _.filter(pois, (poi) => { return VIN !== poi[0]});
             callback(pois);
         })
     }

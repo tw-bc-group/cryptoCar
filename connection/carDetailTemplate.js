@@ -34,7 +34,7 @@ const carMap = {
 }
 module.exports = {
     buildCarDetail: function (tokenId, bcm, navigatedMileage) {
-        car = carMap[tokenId];
+        car = carMap[20000];
         console.log("**** detail json ****", JSON.stringify(car));
         const detail = {
             "location": "北京",
