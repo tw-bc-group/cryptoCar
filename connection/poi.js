@@ -1,5 +1,6 @@
 const redis = require('redis');
 const gju = require('geojson-utils');
+const _ = require('lodash');
 
 const client = redis.createClient(6379, 'localhost');
 const KEY_NAME = 'cars';
@@ -10,10 +11,13 @@ module.exports = {
         const centerLon = (lon0 + lon1) / 2;
         const centerLat = (lat0 + lat1) / 2;
         console.log(centerLon, centerLat);
-        client.georadius(KEY_NAME, centerLon, centerLat, 500, 'km', 'WITHCOORD', 'ASC', (error, pois) => {
+        client.georadius(KEY_NAME, centerLon, centerLat, 50, 'km', 'WITHCOORD', 'ASC', (error, pois) => {
             if (error) {
                 console.log(error);
             }
+
+            pois = _.filter(pois, (poi) => { console.log(poi); return VIN !== poi[0]});
+            console.log(pois);
             callback(pois);
         });
     },
@@ -36,12 +40,13 @@ module.exports = {
             callback(distance);
         });
     },
-    meetingCar: (selfLon, selfLat, callback) => {
-        client.georadius(KEY_NAME, selfLon, selfLat, 1, 'km', 'WITHCOORD', 'ASC', 'COUNT', 1, (error, poi) => {
+    meetingCar: (VIN, selfLon, selfLat, callback) => {
+        client.georadius(KEY_NAME, selfLon, selfLat, 1, 'km', 'WITHCOORD', 'ASC', 'COUNT', 2, (error, pois) => {
             if (error) {
                 console.log(error);
             }
-            callback(poi);
+            pois = _.filter(pois, (poi) => { return VIN !== parseInt(poi[0])});
+            callback(pois);
         })
     }
 };

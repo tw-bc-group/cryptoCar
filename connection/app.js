@@ -83,7 +83,7 @@ module.exports = {
             (pois) => callback(poiFeaturesTemplate.buildFeatures(pois))
         );
 
-        // self.addNavigatedMileage(VIN, selfLon, selfLat);
+        self.addNavigatedMileage(VIN, selfLon, selfLat);
         self.meetingCar(VIN, selfLon, selfLat);
     },
     addNavigatedMileage: function (VIN, selfLon, selfLat) {
@@ -102,7 +102,7 @@ module.exports = {
         const self = this;
 
         CarController.setProvider(self.web3.currentProvider);
-        poi.meetingCar(selfLon, selfLat, (poi) => {
+        poi.meetingCar(VIN, selfLon, selfLat, (poi) => {
             if (!poi) {
                 return;
             }
