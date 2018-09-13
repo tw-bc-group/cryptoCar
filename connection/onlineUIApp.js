@@ -43,7 +43,7 @@ const myCarEntry_DetailEntry = {
                                     // },
                                     "favouritesButton": null,
                                     "rows": [{
-                                        // "id": "contractId", // Notation: If you just want to show the text in it, you actually don't need to set ID for it.
+                                        "id": "contractId", // Notation: If you just want to show the text in it, you actually don't need to set ID for it.
                                         "type": "oneLineButton",
                                         "image": buildImage(null, null, null, null),
                                         "primaryText": "contract Id ... ",
@@ -119,10 +119,22 @@ module.exports = {
                     "leftLogo": null,
                     "entries": [myCarEntry, myCarEntry]
                 }]
-            }
-            // "events": [{
-               // Notation: If you want to add any click events for your button, you can just enter the events you want here. 
-            // }]
+            },
+            "events": [{
+                "elementName": "contractId",
+                "actions": [{"type": "ONLINE_UIACTIONS_UPDATE_WIDGET",
+                             "arguments": {
+                                "restRequest": {
+                                    "body": null,
+                                    "path": "/sequence/0/refresh",
+                                    "requestParameter": null,
+                                    "type": "Post"
+                                } 
+                             }
+                            }]
+                
+            //    Notation: If you want to add any click events for your button, you can just enter the events you want here. 
+            }]
         });
     }
 }
