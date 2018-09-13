@@ -16,8 +16,7 @@ module.exports = {
                 console.log(error);
             }
 
-            pois = _.filter(pois, (poi) => { console.log(poi); return VIN !== poi[0]});
-            console.log(pois);
+            pois = _.filter(pois, (poi) => { return VIN !== poi[0]});
             callback(pois);
         });
     },
@@ -45,7 +44,11 @@ module.exports = {
             if (error) {
                 console.log(error);
             }
-            pois = _.filter(pois, (poi) => { return VIN !== parseInt(poi[0])});
+
+            if(!pois){
+                return;
+            }
+            pois = _.filter(pois, (poi) => { return VIN !== poi[0]});
             callback(pois);
         })
     }
