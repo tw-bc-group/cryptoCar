@@ -33,6 +33,13 @@ const buildFeatureListContent = (title, iconImage) => {
             }
 }
 
+const buildGallery = (contents) => {
+    return {
+                "type": "pictureGallery",
+                "content": contents
+            }
+}
+
 const buildImage = (url, base64, asset, uiImage) => {
     return {
         "url": url,
@@ -73,7 +80,7 @@ const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage(
                                                                             "My Crypto Car new one",
                                                                             "Owner new one");
 
-const contents = [
+const featureListContents = [
     buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
     buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
     buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
@@ -81,6 +88,12 @@ const contents = [
     buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
     buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
 ]
+
+const galleryContents = [
+                            buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
+                            buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
+                            buildImage("http://42.159.6.37:3000/images/carpic8.png", null, null, null)
+                        ]
 
 const myCarEntry_DetailEntry = {
                                     "type": "locationBased",
@@ -93,15 +106,9 @@ const myCarEntry_DetailEntry = {
                                     "rows": [
                                         buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
                                         buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                        buildFeatureList(contents),
-                                    {
-                                        "type": "pictureGallery",
-                                        "content": [
-                                            buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
-                                            buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
-                                            buildImage("http://42.159.6.37:3000/images/carpic8.png", null, null, null)
-                                        ]
-                                    }]
+                                        buildFeatureList(featureListContents),
+                                        buildGallery(galleryContents)
+                                    ]
                                 }
                                 
 const myCarEntry = {
