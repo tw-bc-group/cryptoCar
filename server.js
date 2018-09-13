@@ -66,7 +66,6 @@ app.get('/features', (req, res) => {
                     },
                     "lastModified": (new Date()).toISOString(),
                     "name": "CryptoCar",
-                    "mapFeatureType": "restaurant",
                     "address": {
                         "street": "CryptoCar"
                     },
@@ -99,7 +98,6 @@ app.get('/features', (req, res) => {
                     },
                     "lastModified": (new Date()).toISOString(),
                     "name": "CryptoCar",
-                    "mapFeatureType": "restaurant",
                     "address": {
                         "street": "CryptoCar"
                     },
@@ -132,7 +130,6 @@ app.get('/features', (req, res) => {
                     },
                     "lastModified": (new Date()).toISOString(),
                     "name": "CryptoCar",
-                    "mapFeatureType": "restaurant",
                     "address": {
                         "street": "CryptoCar"
                     },
