@@ -31,6 +31,7 @@ app.post('/cars', (req, res) => {
 app.post('/notify', (req, res) => {
     console.log('**** POST /notify ****');
     notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", (requestBody) => res.send(requestBody));
+    // notify.notifyCarsOwner("CRYPTOCAR", "WDD217LJ4XG002440", (requestBody) => res.send(requestBody));
 });
 
 app.get('/features', (req, res) => {
