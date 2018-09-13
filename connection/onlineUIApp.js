@@ -17,7 +17,7 @@ module.exports = {
                                 "base64": null,
                                 "url": "http://42.159.6.37:3000/images/carpic6.png",
                                 "asset": null
-                            }, //This is for show the car image
+                            }, // Notation: This is for show the car image
                             "title": "My Car",
                             "starsImageEntryKeepSize": null, 
                             "starsImageDescriptionKeepSize": null, 
@@ -27,7 +27,7 @@ module.exports = {
                                 "uiImage": null,
                                 "base64": null,
                                 "asset": null
-                            }, //This is for reviewer
+                            }, // Notation: This is for reviewer, which means this is actually shows the star.
                             "reviews": null,
                             "subtitle1": "Car property 1",
                             "subtitle2": "Car property 2",
@@ -42,7 +42,7 @@ module.exports = {
                                 "base64": null,
                                 "url": "http://42.159.6.37:3000/images/carpic6.png",
                                 "asset": null
-                            }, //This is for showing the car image 
+                            },
                             "starsImage": null, 
                             "voiceMessage": "Provided by ThoughtWorks", 
                             // "favouritesButton": {
@@ -60,14 +60,14 @@ module.exports = {
                             // },
                             "favouritesButton": null,
                             "rows": [{
-                                "id": "contractId",
+                                // "id": "contractId", // Notation: If you just want to show the text in it, you actually don't need to set ID for it.
                                 "type": "oneLineButton",
                                 "image": null,
                                 "primaryText": "contract Id ... ",
                                 "actionIcon": null
                             },
                             {
-                                "id": "buttonID02",
+                                // "id": "buttonID02", // Notation: If you just want to show the text in it, you actually don't need to set ID for it.
                                 "type": "twoLineButton",
                                 "image": null, 
                                 "primaryText": "Primary Text", 
@@ -120,7 +120,7 @@ module.exports = {
                                         "base64": null,
                                         "url": "http://42.159.6.37:3000/images/carpic6.png",
                                         "asset": null
-                                     }, // Image for gallery
+                                     },
                                      {
                                         "base64": null,
                                         "url": "http://42.159.6.37:3000/images/carpic6.png",
@@ -138,7 +138,7 @@ module.exports = {
                 }]
             }
             // "events": [{
-                
+               // Notation: If you want to add any click events for your button, you can just enter the events you want here. 
             // }]
         });
     }
