@@ -22,6 +22,7 @@ const getFloatArray = (inputString) => _.map(_.split(inputString, ','), str => p
 
 let accounts = [];
 let owner;
+let counter = 0;
 
 module.exports = {
     start: function () {
@@ -110,8 +111,14 @@ module.exports = {
             }
 
             CarController.deployed().then(function (instance) {
-                // notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", function(){});
-                // notify.notifyCarsOwner("CRYPTOCAR", "WDD217LJ4XG002440", function(){});
+                if(counter < 2) {
+                    setTimeout(function(){
+                        notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", function(){});
+                        // notify.notifyCarsOwner("CRYPTOCAR", "WDD217LJ4XG002440", function(){});
+
+                    }, 10000);
+                    counter ++;
+                }
 
                 return instance.meetCar(parseInt(VIN), parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 300000 });
             }).catch(function (e) {
