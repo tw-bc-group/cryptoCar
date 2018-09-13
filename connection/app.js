@@ -61,10 +61,10 @@ module.exports = {
 
         CarController.setProvider(self.web3.currentProvider);
         CarController.deployed().then(function (instance) {
-            return instance.tokenIdToCarInfo.call(VIN);
+            return instance.tokenIdToCarInfo.call(parseInt(VIN));
         }).then(function (value) {
             const [ tokenId, bcm, navigatedMileage ] = value;
-            callback(carDetailTemplate.buildCarDetail(tokenId, bcm, navigatedMileage));
+            callback(carDetailTemplate.buildCarDetail(parseInt(tokenId), bcm, navigatedMileage));
         });
     },
     features: function (boundingbox, scale, position, heading, VIN, callback) {
