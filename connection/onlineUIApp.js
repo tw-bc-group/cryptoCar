@@ -22,9 +22,7 @@ const buildTwoLineButton = (image, primaryText, secondaryText, actionIcon, useOn
 const buildFeatureList = (contents) => {
     return {
                 "type": "featureList",
-                "content":[
-                    contents
-                ]
+                "content": contents
             }
 }
 
