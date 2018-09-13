@@ -69,16 +69,16 @@ module.exports = {
     },
     features: function (boundingbox, scale, position, heading, VIN, callback) {
         const self = this;
-        const [ longitude0, latitude0, longitude1, latitude1 ] = getFloatArray(boundingbox);
+        const [ lat0, lon0, lat1, lon1 ] = getFloatArray(boundingbox);
         // Note: LBS give the lat as first, lon as second
         const [ selfLat, selfLon ] = getFloatArray(position);
 
         poi.savePosition(selfLon, selfLat, VIN);
         poi.getPoiInRange(
-            longitude0,
-            latitude0,
-            longitude1,
-            latitude1,
+            lon0,
+            lat0,
+            lon1,
+            lat1,
             VIN,
             (pois) => callback(poiFeaturesTemplate.buildFeatures(pois))
         );
