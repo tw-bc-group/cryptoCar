@@ -49,6 +49,7 @@ app.get('/features', (req, res) => {
     console.log(position);
     if (!position) {
         console.log('no possition');
+        res.send({"features": []});
         return;
     }
 
