@@ -85,7 +85,7 @@ app.get('/features', (req, res) => {
                             "lastModified": (new Date()).toISOString()
                         }
                     },
-                    "mapFeatureType": "lbs-aop",
+                    // "mapFeatureType": "lbs-aop",
                     "isDestination": true,
                     "isSelectable": true
                 },
@@ -117,7 +117,7 @@ app.get('/features', (req, res) => {
                             "lastModified": (new Date()).toISOString()
                         }
                     },
-                    "mapFeatureType": "lbs-aop",
+                    // "mapFeatureType": "lbs-aop",
                     "isDestination": true,
                     "isSelectable": true
                 },
@@ -149,7 +149,7 @@ app.get('/features', (req, res) => {
                             "lastModified": (new Date()).toISOString()
                         }
                     },
-                    "mapFeatureType": "lbs-aop",
+                    // "mapFeatureType": "lbs-aop",
                     "isDestination": true,
                     "isSelectable": true
                 }
