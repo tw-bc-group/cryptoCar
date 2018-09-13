@@ -161,7 +161,7 @@ app.get('/features', (req, res) => {
                                     39.9087,
                                     116.3975
                                 ],
-                                "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                                "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/cryptocar/car%20logo2.png",
                                 "isAccess": true
                             }
                         ]
@@ -172,7 +172,7 @@ app.get('/features', (req, res) => {
                         "street": "CryptoCar"
                     },
                     "listIconSet": {
-                        "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                        "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/cryptocar/car%20logo2.png",
                         "lastModified": (new Date()).toISOString()
                     },
                     "reference": {
