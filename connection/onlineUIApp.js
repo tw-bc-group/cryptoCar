@@ -48,6 +48,7 @@ const buildImage = (url, base64, asset, uiImage) => {
         "uiImage": uiImage
     };
 }
+
 const create_MyCarEntry_CarouselEntry = (mainImage, title, starsImage, subtitle1, subtitle2, imageHeader, imageFooter) => {
     return {
                 "voiceMessage": "Provided by ThoughtWorks",
@@ -90,9 +91,55 @@ const refreshPageEvent = (elementName) => {
             }
 }
 
+const myCollection_1 = () => {
+    const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_guest_car1.jpg", null, null, null),
+                                                                            "My Collect Car",
+                                                                            buildImage(null, null, null, null),
+                                                                            "Car property 1",
+                                                                            "Car property 2",
+                                                                            "My Crypto Car",
+                                                                            "Owner");
+    const featureListContents = [
+        buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 4", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    ];
+    
+    const galleryContents = [
+                                buildImage("http://42.159.6.37:3000/images/my_guest_car1.jpg", null, null, null),
+                                buildImage("http://42.159.6.37:3000/images/my_guest_car2.jpg", null, null, null),
+                                buildImage("http://42.159.6.37:3000/images/my_guest_car3.jpg", null, null, null)
+                            ];
+    
+    const myCarEntry_DetailEntry = {
+                                        "type": "locationBased",
+                                        "title": "My Car",
+                                        "subtitle": "Description 1", 
+                                        "headerImage": buildImage("http://42.159.6.37:3000/images/my_guest_car1.jpg", null, null, null),
+                                        "starsImage": buildImage(null, null, null, null), 
+                                        "voiceMessage": "Provided by ThoughtWorks", 
+                                        "favouritesButton": null,
+                                        "rows": [
+                                            buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
+                                            buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
+                                            buildFeatureList(featureListContents),
+                                            buildGallery(galleryContents)
+                                        ]
+                                    };
+
+    return {
+                    "id": "carouselEntry01",
+                    "carouselEntry": myCarEntry_CarouselEntry,
+                    "detailsEntry": myCarEntry_DetailEntry
+                };
+}
+
 module.exports = {
     startApp: function () {
-        const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
+        const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_original_car1.jpg", null, null, null),
                                                                             "My Car",
                                                                             buildImage(null, null, null, null),
                                                                             "Car property 1",
@@ -109,21 +156,21 @@ module.exports = {
         ];
         
         const galleryContents = [
-                                    buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
-                                    buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
-                                    buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null)
+                                    buildImage("http://42.159.6.37:3000/images/my_original_car1.jpg", null, null, null),
+                                    buildImage("http://42.159.6.37:3000/images/my_original_car2.jpg", null, null, null),
+                                    buildImage("http://42.159.6.37:3000/images/my_original_car3.jpg", null, null, null)
                                 ];
         
         const myCarEntry_DetailEntry = {
                                             "type": "locationBased",
                                             "title": "My Car",
                                             "subtitle": "Description 1", 
-                                            "headerImage": buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null),
+                                            "headerImage": buildImage("http://42.159.6.37:3000/images/my_original_car1.jpg", null, null, null),
                                             "starsImage": buildImage(null, null, null, null), 
                                             "voiceMessage": "Provided by ThoughtWorks", 
                                             "favouritesButton": null,
                                             "rows": [
-                                                buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
+                                                buildOneLineButton(null, buildImage(null, null, null, null), "contract Id ...", null),
                                                 buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
                                                 buildFeatureList(featureListContents),
                                                 buildGallery(galleryContents)
@@ -138,13 +185,13 @@ module.exports = {
 
         return ({
             "widgetData": {
-                "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCarEntry, myCarEntry])]
+                "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCollection_1()])]
             },
             "events": [refreshPageEvent("contractId")]
         });
     },
     refreshPage: function () {
-        const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null),
+        const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_upgraded_car1.jpg", null, null, null),
                                                                             "My Car Upgrade",
                                                                             buildImage(null, null, null, null),
                                                                             "Car property 1 new one",
@@ -162,21 +209,21 @@ module.exports = {
         ];
         
         const galleryContents = [
-                                    buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
-                                    buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
-                                    buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null)
+                                    buildImage("http://42.159.6.37:3000/images/my_upgraded_car1.jpg", null, null, null),
+                                    buildImage("http://42.159.6.37:3000/images/my_upgraded_car2.jpg", null, null, null),
+                                    buildImage("http://42.159.6.37:3000/images/my_upgraded_car3.jpg", null, null, null)
                                 ];
         
         const myCarEntry_DetailEntry = {
                                             "type": "locationBased",
                                             "title": "My Car",
                                             "subtitle": "Description 1", 
-                                            "headerImage": buildImage("http://42.159.6.37:3000/images/carpic9.png", null, null, null),
+                                            "headerImage": buildImage("http://42.159.6.37:3000/images/my_upgraded_car1.jpg", null, null, null),
                                             "starsImage": buildImage(null, null, null, null), 
                                             "voiceMessage": "Provided by ThoughtWorks", 
                                             "favouritesButton": null,
                                             "rows": [
-                                                buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
+                                                buildOneLineButton(null, buildImage(null, null, null, null), "contract Id ...", null),
                                                 buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
                                                 buildFeatureList(featureListContents),
                                                 buildGallery(galleryContents)
@@ -191,7 +238,7 @@ module.exports = {
 
         return ({
             "widgetData": {
-                "tabs": [newTab("My Crypto Car", [myCarEntryNew]), newTab("Collection", [myCarEntryNew, myCarEntryNew])]
+                "tabs": [newTab("My Crypto Car", [myCarEntryNew]), newTab("Collection", [myCollection_1()])]
             },
             "events": [refreshPageEvent("contractId")]
         });
