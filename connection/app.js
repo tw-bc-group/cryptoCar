@@ -111,7 +111,6 @@ module.exports = {
 
             CarController.deployed().then(function (instance) {
                 notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", function(){});
-                console.log(parseInt(VIN), parseInt(poi[ 0 ][0]));
                 return instance.meetCar(parseInt(VIN), parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 30000000 });
             }).catch(function (e) {
                 console.log(e);
