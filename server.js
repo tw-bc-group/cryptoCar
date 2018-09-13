@@ -7,6 +7,7 @@ const notify = require('./connection/notify');
 const bodyParser = require('body-parser');
 const carDetailTemplate = require('./connection/carDetailTemplate');
 const onlineUIApp = require('./connection/onlineUIApp');
+var refreshPage = false;
 
 
 // parse application/x-www-form-urlencoded
@@ -37,11 +38,15 @@ app.post('/notify', (req, res) => {
 
 app.post('/app', (req, res) => {
     console.log('**** POST /app ****');
+    console.log('**** refresh page ****', refreshPage);
 
-    if(req.query){
-        res.send(onlineUIApp.refreshApp());
+    if(refreshPage){
+        refreshPage = !refreshPage;
+        res.send(onlineUIApp.refreshPage());
+    }else{
+        refreshPage = !refreshPage;
+        res.send(onlineUIApp.startApp());
     }
-    res.send(onlineUIApp.startApp());
 });
 
 app.get('/features', (req, res) => {
