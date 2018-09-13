@@ -195,7 +195,7 @@ app.get('/details/:id', (req, res) => {
     console.log('**** GET / POI detail ****');
     const carId = req.params.id;
     console.log(carId);
-    // truffle_connect.detail(carId, (carInfo) => res.send(carInfo));
+    truffle_connect.detail(carId, (carInfo) => res.send(carInfo));
     // res.send(carDetailTemplate.buildCarDetail('tokenID123', 'bcm', '2222222'))
 });
 
