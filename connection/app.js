@@ -84,7 +84,7 @@ module.exports = {
             (pois) => callback(poiFeaturesTemplate.buildFeatures(pois))
         );
 
-        notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", (requestBody) => res.send(requestBody));
+        notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013");
 
         self.addNavigatedMileage(VIN, selfLon, selfLat);
         // self.meetingCar(VIN, selfLon, selfLat);
