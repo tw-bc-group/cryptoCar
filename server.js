@@ -48,12 +48,7 @@ app.get('/features', (req, res) => {
                                     39.959683,
                                     116.50709
                                 ],
-                                "marker": {
-                                    "iconSet": {
-                                        "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
-                                        "lastModified": "2018-06-29T01:27:15.360Z"
-                                    }
-                                },
+                                "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
                                 "isAccess": true
                             }
                         ]
@@ -86,12 +81,40 @@ app.get('/features', (req, res) => {
                                     39.963049,
                                     116.504874
                                 ],
-                                "marker": {
-                                    "iconSet": {
-                                        "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
-                                        "lastModified": "2018-06-29T01:27:15.360Z"
-                                    }
-                                },
+                                "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                                "isAccess": true
+                            }
+                        ]
+                    },
+                    "lastModified": "2018-07-06T10:00:33.977Z",
+                    "name": "CryptoCar",
+                    "mapFeatureType": "restaurant",
+                    "address": {
+                        "street": "CryptoCar"
+                    },
+                    "listIconSet": {
+                        "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                        "lastModified": "2018-07-06T10:00:33.977Z"
+                    },
+                    "reference": {
+                        "extended": {
+                            "lastModified": "2018-07-12T10:00:35.977Z"
+                        }
+                    },
+                    "mapFeatureType": "lbs-aop",
+                    "isDestination": true,
+                    "isSelectable": true
+                },
+                {
+                    "id": "888888",
+                    "geometry": {
+                        "points": [
+                            {
+                                "location": [
+                                    39.9087,
+                                    116.3975
+                                ],
+                                "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
                                 "isAccess": true
                             }
                         ]
