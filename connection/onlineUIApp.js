@@ -79,9 +79,6 @@ const myCarEntry_DetailEntry = {
                                             },{
                                                 "title": "Badge 6",
                                                 "icon": buildImage(null, null, "navigation/direction_arrow_01", null)
-                                            },{
-                                                "title": "Badge 6",
-                                                "icon": buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null)
                                             }
                                         ]
                                     },
