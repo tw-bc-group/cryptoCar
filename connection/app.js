@@ -47,7 +47,7 @@ module.exports = {
 
         CarController.setProvider(self.web3.currentProvider);
         CarController.deployed().then(function (instance) {
-            return instance.mintUniqueTokenTo(account, carInfo.vin, carInfo.bmc, 'http://',
+            return instance.mintUniqueTokenTo(account, carInfo.vin, carInfo.bmc,
                 { from: owner, gas: 300000 });
         }).then(function (value) {
             callback(getEvent(value, 'NewCar'));
