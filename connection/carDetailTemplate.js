@@ -40,6 +40,10 @@ module.exports = {
             "location": "北京",
             "addPOIinfos": [ 
                 {
+                    "type": "subheader",
+                    "text": "DETAILS"
+              },
+                {
                 "type": "image",
                 "width": 100,
                 "height": 100,
@@ -68,7 +72,7 @@ module.exports = {
                     ]
                 }]
         }
-        return detail;
+        return (detail);
         // return (
         //     {
         //         "location": "北京",
