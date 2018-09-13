@@ -23,8 +23,8 @@ module.exports = {
                         {
                             'location': [
                                 // Note: LBS give the lat as first, lon as second
-                                parseFloat(data[1][1]),
-                                parseFloat(data[1][0])
+                                parseFloat(data[1][1]).toFixed(4),
+                                parseFloat(data[1][0]).toFixed(4)
                             ],
                             'icon': poiIcon,
                             'isAccess': true
@@ -34,7 +34,7 @@ module.exports = {
                 'lastModified': (new Date()).toISOString(),
                 'isSelectable': true,
                 'id': data[ 0 ],
-                'isDestination': false
+                'isDestination': true
             })
         );
 
