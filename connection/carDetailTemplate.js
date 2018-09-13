@@ -75,7 +75,7 @@ module.exports = {
                                                 "horizontalAlignment": "left",
                                                 "font": "f12",
                                                 "color": "color_c07a",
-                                                "text": "tokenId: ` + tokenId + `bcm: ` + bcm + `navigatedMileage: ` + navigatedMileage + `"
+                                                "text": "tokenId: " + tokenId + "\nbcm: " + bcm + "\nnavigatedMileage: " + navigatedMileage 
                                             }
                                         ]
                                     }
