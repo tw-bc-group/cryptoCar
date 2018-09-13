@@ -20,7 +20,7 @@ const notifyData = {
                         }]
                     }],
                     "message": [{
-                        "primaryText": "You meet one player.",
+                        "primaryText": "You collected a car",
                         "secondaryText": "from Crypto Car."
                     }]
                 },
