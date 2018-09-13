@@ -17,19 +17,17 @@ contract CarToken is ERC721Token, Ownable {
     mapping(uint => uint[]) public metCars;
     struct CarInfo {
         uint tokenId;
-        uint bcm;
+        string bcm;
         uint navigatedMileage;
     }
 
     function mintUniqueTokenTo(
         address _to,
         uint _tokenId,
-        uint _bcm,
-        string _tokenURI
+        string _bcm
     ) external onlyOwner
     {
         super._mint(_to, _tokenId);
-        super._setTokenURI(_tokenId, _tokenURI);
         tokenIdToCarInfo[_tokenId] = CarInfo(_tokenId, _bcm, 0);
         emit NewCar(_tokenId);
     }

@@ -21,8 +21,9 @@ contract('car', (accounts) => {
 
     it('should create new crypto car successfully when is contract owner', async () => {
         const expectTokenId = 1000;
+        const expectBcm = 'Mercedes-AMG S 63 4MATIC Coupe';
 
-        await carController.mintUniqueTokenTo(accounts[ 1 ], expectTokenId, 1, 'http://', { from: accounts[ 0 ] })
+        await carController.mintUniqueTokenTo(accounts[ 1 ], expectTokenId, expectBcm, { from: accounts[ 0 ] })
             .then(async (result) => {
                 let event = getEvent(result, 'NewCar');
                 const _tokenId = event.args.tokenId.toNumber();
@@ -30,7 +31,7 @@ contract('car', (accounts) => {
 
                 const carInfo = await carController.tokenIdToCarInfo.call(_tokenId);
                 const [ , bcm, ] = carInfo;
-                assert.equal(bcm.toNumber(), 1);
+                assert.equal(bcm, expectBcm);
             });
     });
 
@@ -38,7 +39,7 @@ contract('car', (accounts) => {
         const expectTokenId = 1001;
 
         try {
-            await carController.mintUniqueTokenTo(accounts[ 1 ], expectTokenId, 1, 'http://', { from: accounts[ 1 ] })
+            await carController.mintUniqueTokenTo(accounts[ 1 ], expectTokenId, 'Mercedes-AMG S 63 4MATIC Coupe', { from: accounts[ 1 ] })
             assert.fail();
         } catch (err) {
             assertVMException(err);
@@ -49,7 +50,7 @@ contract('car', (accounts) => {
     it('should add navigated mileage successfully', async () => {
         const expectTokenId = 1002;
 
-        await carController.mintUniqueTokenTo(accounts[ 1 ], expectTokenId, 1, 'http://', { from: accounts[ 0 ] });
+        await carController.mintUniqueTokenTo(accounts[ 1 ], expectTokenId, 'Mercedes-AMG S 63 4MATIC Coupe', { from: accounts[ 0 ] });
 
         await carController.addNavigatedMileage(expectTokenId, 20);
         const [ , , navigatedMileage ] = await carController.tokenIdToCarInfo(expectTokenId);
@@ -60,8 +61,8 @@ contract('car', (accounts) => {
         const expectTokenId = 1003;
         const otherTokenId = 1004;
 
-        await carController.mintUniqueTokenTo(accounts[ 1 ], expectTokenId, 1, 'http://', { from: accounts[ 0 ] });
-        await carController.mintUniqueTokenTo(accounts[ 1 ], otherTokenId, 1, 'http://', { from: accounts[ 0 ] });
+        await carController.mintUniqueTokenTo(accounts[ 1 ], expectTokenId, 'Mercedes-AMG S 63 4MATIC Coupe', { from: accounts[ 0 ] });
+        await carController.mintUniqueTokenTo(accounts[ 1 ], otherTokenId, 'Mercedes-AMG S 63 4MATIC Coupe', { from: accounts[ 0 ] });
 
         await carController.meetCar(expectTokenId, otherTokenId);
         const metCar = await carController.metCars.call(expectTokenId, 0);
