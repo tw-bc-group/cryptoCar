@@ -259,6 +259,7 @@ const myCollection_1 = () => {
                                             buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x9958b1503D238A2CD0C2b51026344ec0231c7EB0", null, false),
                                             buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 211", null),
                                             buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
+                                            buildGallery(galleryContents)
                                         ]
                                     };
 
@@ -360,6 +361,7 @@ module.exports = {
                                                 buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x95DC578D3C57900420beB5478faD20A94763504b", null, false),
                                                 buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 381", null),
                                                 buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
+                                                buildGallery(galleryContents)
                                             ]
                                         };
 
