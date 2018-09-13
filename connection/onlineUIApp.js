@@ -110,6 +110,22 @@ module.exports = {
                                             "base64": null,
                                             "asset": "navigation/direction_arrow_01"
                                         }
+                                    },{
+                                        "title": "Badge 5",
+                                        "icon":{
+                                            "url": null,
+                                            "uiImage": null,
+                                            "base64": null,
+                                            "asset": "navigation/direction_arrow_01"
+                                        }
+                                    },{
+                                        "title": "Badge 6",
+                                        "icon":{
+                                            "url": null,
+                                            "uiImage": null,
+                                            "base64": null,
+                                            "asset": "navigation/direction_arrow_01"
+                                        }
                                     }
                                 ]
                             },
