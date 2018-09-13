@@ -3,12 +3,6 @@ const poiIcon = "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/im
 module.exports = {
     poiIcon,
     buildFeatures: function (featuresData) {
-        const status = {
-            'timestamp': new Date(),
-            'message': 'ok',
-            'code': 0
-        };
-
         const features = _.map(
             featuresData,
             (data) => ({
@@ -17,8 +11,10 @@ module.exports = {
                     "points": [
                         {
                             "location": [
-                                parseFloat(data[1][1]),
-                                parseFloat(data[1][0])
+                                // parseFloat(data[1][1]),
+                                // parseFloat(data[1][0])
+                                39.9087,
+                                116.3975
                             ],
                             "icon": poiIcon,
                             "isAccess": true
@@ -45,6 +41,6 @@ module.exports = {
             })
         );
 
-        return { status, features };
+        return { features };
     }
 };
