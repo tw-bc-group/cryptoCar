@@ -322,7 +322,7 @@ module.exports = {
             "widgetData": {
                 "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCollection_2(), myCollection_3(), myCollection_1(), myCollection_4()])]
             },
-            "events": [refreshPageEvent("contractId")]
+            "events": [refreshPageEvent("collectGene")]
         });
     },
     refreshPage: function () {
