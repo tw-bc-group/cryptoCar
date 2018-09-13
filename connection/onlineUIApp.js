@@ -110,27 +110,27 @@ const newTab = (title, entries) => {
             }
 }
 
+const refreshPageEvent = (elementName) => {
+    return {
+            "elementName": elementName,
+            "actions": [{"type": "ONLINE_UIACTIONS_UPDATE_WIDGET",
+                        "arguments": {
+                        "restRequest": {
+                            "body": null,
+                            "path": "/sequence/0/refresh",
+                            "requestParameter": null,
+                            "type": "Post"
+                        }}}]
+            }
+}
+
 module.exports = {
     startApp: function () {
         return ({
             "widgetData": {
                 "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCarEntry, myCarEntry])]
             },
-            "events": [{
-                "elementName": "contractId",
-                "actions": [{"type": "ONLINE_UIACTIONS_UPDATE_WIDGET",
-                             "arguments": {
-                                "restRequest": {
-                                    "body": null,
-                                    "path": "/sequence/0/refresh",
-                                    "requestParameter": null,
-                                    "type": "Post"
-                                } 
-                             }
-                            }]
-                
-            //    Notation: If you want to add any click events for your button, you can just enter the events you want here. 
-            }]
+            "events": [refreshPageEvent("contractId")]
         });
     }
 }
