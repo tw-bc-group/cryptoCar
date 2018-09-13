@@ -86,8 +86,8 @@ const myCarEntry_DetailEntry = {
                                         "type": "pictureGallery",
                                         "content": [
                                             buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
-                                            buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
-                                            buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null)
+                                            buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
+                                            buildImage("http://42.159.6.37:3000/images/carpic8.png", null, null, null)
                                         ]
                                     }]
                                 }
