@@ -274,7 +274,7 @@ module.exports = {
         const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_original_car1.png", null, null, null),
                                                                             "Bumblebee",
                                                                             buildImage(null, null, null, null),
-                                                                            "CLA ...",
+                                                                            "AMG CLA 454MATIC",
                                                                             "0x95DC578D3C57900420beB5478faD20A94763504b",
                                                                             "Bumblebee",
                                                                             "Others");
@@ -303,8 +303,8 @@ module.exports = {
                                             "favouritesButton": null,
                                             "rows": [
                                                 buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x95DC578D3C57900420beB5478faD20A94763504b", null, false),
-                                                buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: ............", null),
-                                                buildOneLineButton(null, buildImage(null, null, null, null), "Gear: ............", null),
+                                                buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 381", null),
+                                                buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
                                                 // buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
                                                 // buildFeatureList(featureListContents),
                                                 buildGallery(galleryContents)
@@ -326,12 +326,12 @@ module.exports = {
     },
     refreshPage: function () {
         const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_upgraded_car1.png", null, null, null),
-                                                                            "My Car Upgrade",
+                                                                            "Super Bumblebee",
                                                                             buildImage(null, null, null, null),
-                                                                            "Car property 1 new one",
-                                                                            "Car property 2 new one",
-                                                                            "My Crypto Car new one",
-                                                                            "Owner new one");
+                                                                            "AMG CLA 454MATIC",
+                                                                            "0x95DC578D3C57900420beB5478faD20A94763504b",
+                                                                            "Super Bumblebee",
+                                                                            "Others");
 
         const featureListContents = [
             buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
@@ -357,10 +357,9 @@ module.exports = {
                                             "voiceMessage": "Provided by ThoughtWorks", 
                                             "favouritesButton": null,
                                             "rows": [
-                                                buildOneLineButton(null, buildImage(null, null, null, null), "contract Id ...", null),
-                                                buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                                buildFeatureList(featureListContents),
-                                                buildGallery(galleryContents)
+                                                buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x95DC578D3C57900420beB5478faD20A94763504b", null, false),
+                                                buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: 381", null),
+                                                buildOneLineButton(null, buildImage(null, null, null, null), "Gear: Automatic", null),
                                             ]
                                         };
 
