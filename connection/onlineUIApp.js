@@ -1,3 +1,13 @@
+const buildOneLineButton = (elementId, iconImage, primaryText, actionIcon) =>  {
+    return {
+                "id": elementId,
+                "type": "oneLineButton",
+                "image": iconImage,
+                "primaryText": primaryText,
+                "actionIcon": actionIcon
+            };
+}
+
 const buildImage = (url, base64, asset, uiImage) => {
     return {
         "url": url,
@@ -19,7 +29,8 @@ const create_MyCarEntry_CarouselEntry = (mainImage, title, starsImage, subtitle1
                 "subtitle2": subtitle2,
                 "imageHeader": imageHeader,
                 "imageFooter": imageFooter
-            }}
+            };
+}
 
 const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic6.png", null, null, null),
                                                                             "My Car",
@@ -37,13 +48,8 @@ const myCarEntry_DetailEntry = {
                                     "starsImage": buildImage(null, null, null, null), 
                                     "voiceMessage": "Provided by ThoughtWorks", 
                                     "favouritesButton": null,
-                                    "rows": [{
-                                        "id": "contractId", // Notation: If you just want to show the text in it, you actually don't need to set ID for it.
-                                        "type": "oneLineButton",
-                                        "image": buildImage(null, null, null, null),
-                                        "primaryText": "contract Id ... ",
-                                        "actionIcon": null
-                                    },
+                                    "rows": [
+                                        buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
                                     {
                                         "type": "twoLineButton",
                                         "image": buildImage(null, null, null, null), 
