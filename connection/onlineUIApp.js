@@ -91,6 +91,138 @@ const refreshPageEvent = (elementName) => {
             }
 }
 
+const myCollection_2 = () => {
+    const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/other_car1.jpg", null, null, null),
+                                                                            "My Collect Car",
+                                                                            buildImage(null, null, null, null),
+                                                                            "Car property 1",
+                                                                            "Car property 2",
+                                                                            "My Crypto Car",
+                                                                            "Owner");
+    const featureListContents = [
+        buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 4", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    ];
+    
+    const galleryContents = [
+                                buildImage("http://42.159.6.37:3000/images/other_car1.jpg", null, null, null),
+                            ];
+    
+    const myCarEntry_DetailEntry = {
+                                        "type": "locationBased",
+                                        "title": "My Car",
+                                        "subtitle": "Description 1", 
+                                        "headerImage": buildImage("http://42.159.6.37:3000/images/other_car1.jpg", null, null, null),
+                                        "starsImage": buildImage(null, null, null, null), 
+                                        "voiceMessage": "Provided by ThoughtWorks", 
+                                        "favouritesButton": null,
+                                        "rows": [
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Collect gene!", null),
+                                            buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
+                                            buildFeatureList(featureListContents),
+                                            buildGallery(galleryContents)
+                                        ]
+                                    };
+
+    return {
+                    "id": "carouselEntry01",
+                    "carouselEntry": myCarEntry_CarouselEntry,
+                    "detailsEntry": myCarEntry_DetailEntry
+                };
+}
+
+const myCollection_3 = () => {
+    const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/other_car2.jpg", null, null, null),
+                                                                            "My Collect Car",
+                                                                            buildImage(null, null, null, null),
+                                                                            "Car property 1",
+                                                                            "Car property 2",
+                                                                            "My Crypto Car",
+                                                                            "Owner");
+    const featureListContents = [
+        buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 4", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    ];
+    
+    const galleryContents = [
+                                buildImage("http://42.159.6.37:3000/images/other_car2.jpg", null, null, null),
+                            ];
+    
+    const myCarEntry_DetailEntry = {
+                                        "type": "locationBased",
+                                        "title": "My Car",
+                                        "subtitle": "Description 1", 
+                                        "headerImage": buildImage("http://42.159.6.37:3000/images/other_car2.jpg", null, null, null),
+                                        "starsImage": buildImage(null, null, null, null), 
+                                        "voiceMessage": "Provided by ThoughtWorks", 
+                                        "favouritesButton": null,
+                                        "rows": [
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Collect gene!", null),
+                                            buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
+                                            buildFeatureList(featureListContents),
+                                            buildGallery(galleryContents)
+                                        ]
+                                    };
+
+    return {
+                    "id": "carouselEntry01",
+                    "carouselEntry": myCarEntry_CarouselEntry,
+                    "detailsEntry": myCarEntry_DetailEntry
+                };
+}
+
+const myCollection_4 = () => {
+    const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/other_car3.jpg", null, null, null),
+                                                                            "My Collect Car",
+                                                                            buildImage(null, null, null, null),
+                                                                            "Car property 1",
+                                                                            "Car property 2",
+                                                                            "My Crypto Car",
+                                                                            "Owner");
+    const featureListContents = [
+        buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 4", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
+        buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    ];
+    
+    const galleryContents = [
+                                buildImage("http://42.159.6.37:3000/images/other_car3.jpg", null, null, null),
+                            ];
+    
+    const myCarEntry_DetailEntry = {
+                                        "type": "locationBased",
+                                        "title": "My Car",
+                                        "subtitle": "Description 1", 
+                                        "headerImage": buildImage("http://42.159.6.37:3000/images/other_car3.jpg", null, null, null),
+                                        "starsImage": buildImage(null, null, null, null), 
+                                        "voiceMessage": "Provided by ThoughtWorks", 
+                                        "favouritesButton": null,
+                                        "rows": [
+                                            buildOneLineButton(null, buildImage(null, null, null, null), "Collect gene!", null),
+                                            buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
+                                            buildFeatureList(featureListContents),
+                                            buildGallery(galleryContents)
+                                        ]
+                                    };
+
+    return {
+                    "id": "carouselEntry01",
+                    "carouselEntry": myCarEntry_CarouselEntry,
+                    "detailsEntry": myCarEntry_DetailEntry
+                };
+}
+
 const myCollection_1 = () => {
     const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_guest_car1.png", null, null, null),
                                                                             "My Collect Car",
@@ -123,7 +255,7 @@ const myCollection_1 = () => {
                                         "voiceMessage": "Provided by ThoughtWorks", 
                                         "favouritesButton": null,
                                         "rows": [
-                                            buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
+                                            buildOneLineButton("collectGene", buildImage(null, null, null, null), "Collect gene!", null),
                                             buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
                                             buildFeatureList(featureListContents),
                                             buildGallery(galleryContents)
@@ -185,7 +317,7 @@ module.exports = {
 
         return ({
             "widgetData": {
-                "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCollection_1()])]
+                "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCollection_2(), myCollection_3(), myCollection_4(), myCollection_1()])]
             },
             "events": [refreshPageEvent("contractId")]
         });
@@ -238,9 +370,9 @@ module.exports = {
 
         return ({
             "widgetData": {
-                "tabs": [newTab("My Crypto Car", [myCarEntryNew]), newTab("Collection", [myCollection_1()])]
+                "tabs": [newTab("My Crypto Car", [myCarEntryNew]), newTab("Collection", [myCollection_2(), myCollection_3(), myCollection_4(), myCollection_1()])]
             },
-            "events": [refreshPageEvent("contractId")]
+            "events": [refreshPageEvent("collectGene")]
         });
     }
 }
