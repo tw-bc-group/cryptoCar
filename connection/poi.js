@@ -32,7 +32,7 @@ module.exports = {
             const [ latestLon, latestLat ] = value;
             const distance = gju.pointDistance(
                 { type: 'point', coordinates: [ latestLon, latestLat ] },
-                { type: 'point', coordinates: [ selfLon, selfLat ] });
+                { type: 'point', coordinates: [ parseFloat(selfLon), parseFloat(selfLat) ] });
             callback(distance);
         });
     },

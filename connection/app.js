@@ -3,6 +3,7 @@ const carDetailTemplate = require('./carDetailTemplate');
 const poiFeaturesTemplate = require('./poiFeaturesTemplate');
 const poi = require('./poi');
 const _ = require('lodash');
+const notify = require('./notify');
 
 const carController_artifact = require('../build/contracts/CarController.json');
 const CarController = contract(carController_artifact);
@@ -83,7 +84,9 @@ module.exports = {
             (pois) => callback(poiFeaturesTemplate.buildFeatures(pois))
         );
 
-        // self.addNavigatedMileage(VIN, selfLon, selfLat);
+        notify.notifyCarsOwner("CRYPTOCAR", "LE43X8HB6KZ000013", (requestBody) => res.send(requestBody));
+
+        self.addNavigatedMileage(VIN, selfLon, selfLat);
         // self.meetingCar(VIN, selfLon, selfLat);
     },
     addNavigatedMileage: function (VIN, selfLon, selfLat) {
@@ -91,8 +94,9 @@ module.exports = {
 
         CarController.setProvider(self.web3.currentProvider);
         poi.calcMovedDistance(VIN, selfLon, selfLat, (distance) => {
+            console.log(distance);
             CarController.deployed().then(function (instance) {
-                return instance.addNavigatedMileage(VIN, distance, { from: owner });
+                return instance.addNavigatedMileage(parseInt(VIN), distance, { from: owner });
             }).catch(function (e) {
                 console.log(e);
             });
@@ -108,34 +112,17 @@ module.exports = {
             }
 
             CarController.deployed().then(function (instance) {
-                return instance.meetCar(VIN, parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 300000 });
+                return instance.meetCar(parseInt(VIN), parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 300000 });
             }).catch(function (e) {
                 console.log(e);
             });
         });
     },
-    mockCars: function() {
-        // const cars = [
-        //     ['39.906779,116.402562', '39.906779,116.402562', '39.906779,116.402562', '39.906779,116.402562', '39.906779,116.402562'],
-        //     ['39.906537,116.405967', '39.906537,116.405967', '39.906537,116.405967', '39.906537,116.405967', '39.906537,116.405967'],
-        //     ['39.90662,116.401497', '39.906537,116.402427', '39.906492,116.403469', '39.906509,116.404174', '39.906568,116.405113'],
-        //     ['39.905748,116.406276', '39.906281,116.406124', '39.906533,116.406124', '39.906799,116.40611', '39.906799,116.40611'],
-        //     ['39.90682,116.40797', '39.906754,116.407036', '39.906671,116.406353', '39.906671,116.406353', '39.906671,116.406353']
-        // ];
-
-        const cars = [
-            ['39.906779,116.402562', '39.906537,116.405967', '39.90662,116.401497', '39.905748,116.406276', '39.90682,116.40797'],
-            ['39.906779,116.402562', '39.906537,116.405967', '39.906537,116.402427', '39.906281,116.406124', '39.906754,116.407036'],
-            ['39.906779,116.402562', '39.906537,116.405967', '39.906492,116.403469', '39.906533,116.406124', '39.906671,116.406353'],
-            ['39.906779,116.402562', '39.906537,116.405967', '39.906509,116.404174', '39.906799,116.40611', '39.906671,116.406353'],
-            ['39.906779,116.402562', '39.906537,116.405967', '39.906568,116.405113', '39.906799,116.40611', '39.906671,116.406353']
-        ];
-
-        for(let i = 0; i < 5; i++){
-            cars[i].forEach(point => {
-                const t = getFloatArray(point);
-                poi.savePosition(point[0], point[1], 20000 + i);
-            })
+    mockCars: function () {
+        const cars = [ '39.91427250,116.43488660', '39.91205500,116.43530100', '39.90662,116.401497', '39.905748,116.406276' ];
+        for (let i = 0; i < cars.length; i++) {
+            const t = getFloatArray(point);
+            poi.savePosition(t[ 1 ], t[ 0 ], 20000 + i);
         }
     }
 };
