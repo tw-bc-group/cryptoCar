@@ -53,7 +53,7 @@ app.post('/app', (req, res) => {
 app.get('/features', (req, res) => {
     console.log('**** GET / POIs ****');
     let { boundingbox, scale, position, heading, VIN } = req.query;
-    console.log(position);
+    console.log(boundingbox, position);
     if(!VIN){
         VIN = '10000';
     }
