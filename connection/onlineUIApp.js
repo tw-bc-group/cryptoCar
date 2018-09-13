@@ -70,7 +70,7 @@ const newTab = (title, entries) => {
                 "title": title,
                 "emptyListText": "No matched car",
                 "providedByText": "Provided by ThoughtWorks", // Notation: If just has one tab, then the provided text will show on the title
-                "providedByText": "Crypto Car",
+                "providedByText": "powered by ThoughtWorks",
                 "providedByLogo": null,
                 "leftLogo": null,
                 "entries": entries
@@ -295,8 +295,8 @@ module.exports = {
         
         const myCarEntry_DetailEntry = {
                                             "type": "locationBased",
-                                            "title": "My Car",
-                                            "subtitle": "Description 1", 
+                                            "title": "Bumblebee",
+                                            "subtitle": "0x95DC578D3C57900420beB5478faD20A94763504b", 
                                             "headerImage": buildImage("http://42.159.6.37:3000/images/my_original_car1.png", null, null, null),
                                             "starsImage": buildImage(null, null, null, null), 
                                             "voiceMessage": "Provided by ThoughtWorks", 
