@@ -14,7 +14,7 @@ module.exports = {
                 'name': '匿名',
                 'reference': {
                     'extended': {
-                        'lastModified': '2018-07-12T10:02:35.977Z'
+                        'lastModified': (new Date()).toISOString()
                     }
                 },
                 'geometry': {
@@ -28,7 +28,7 @@ module.exports = {
                         }
                     ]
                 },
-                'lastModified': '2018-07-06T10:02:33.977Z',
+                'lastModified': (new Date()).toISOString(),
                 'isSelectable': true,
                 'id': data[ 0 ],
                 'isDestination': false

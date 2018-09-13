@@ -6,7 +6,7 @@ module.exports = {
                 "addPOIinfos": [
                     {
                         "type": "subheader",
-                        "text": "DETAILS"
+                        "text": "CryptoCar Details"
                     },
                     {
                         "type": "row",
@@ -33,7 +33,7 @@ module.exports = {
                                                 "horizontalAlignment": "left",
                                                 "font": "f12",
                                                 "color": "color_c07a",
-                                                "text": "(1611), 23333/Person"
+                                                "text": "这里是内嵌entry text"
                                             }
                                         ]
                                     },

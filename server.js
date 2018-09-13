@@ -63,7 +63,7 @@ app.get('/features', (req, res) => {
                             }
                         ]
                     },
-                    "lastModified": "2018-07-06T10:00:33.977Z",
+                    "lastModified": (new Date()).toISOString(),
                     "name": "CryptoCar",
                     "mapFeatureType": "restaurant",
                     "address": {
@@ -71,11 +71,11 @@ app.get('/features', (req, res) => {
                     },
                     "listIconSet": {
                         "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
-                        "lastModified": "2018-07-06T10:00:33.977Z"
+                        "lastModified": (new Date()).toISOString()
                     },
                     "reference": {
                         "extended": {
-                            "lastModified": "2018-07-12T10:00:35.977Z"
+                            "lastModified": (new Date()).toISOString()
                         }
                     },
                     "mapFeatureType": "lbs-aop",
@@ -96,7 +96,7 @@ app.get('/features', (req, res) => {
                             }
                         ]
                     },
-                    "lastModified": "2018-07-06T10:00:33.977Z",
+                    "lastModified": (new Date()).toISOString(),
                     "name": "CryptoCar",
                     "mapFeatureType": "restaurant",
                     "address": {
@@ -104,11 +104,11 @@ app.get('/features', (req, res) => {
                     },
                     "listIconSet": {
                         "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
-                        "lastModified": "2018-07-06T10:00:33.977Z"
+                        "lastModified": (new Date()).toISOString()
                     },
                     "reference": {
                         "extended": {
-                            "lastModified": "2018-07-12T10:00:35.977Z"
+                            "lastModified": (new Date()).toISOString()
                         }
                     },
                     "mapFeatureType": "lbs-aop",
@@ -129,7 +129,7 @@ app.get('/features', (req, res) => {
                             }
                         ]
                     },
-                    "lastModified": "2018-07-06T10:00:33.977Z",
+                    "lastModified": (new Date()).toISOString(),
                     "name": "CryptoCar",
                     "mapFeatureType": "restaurant",
                     "address": {
@@ -137,11 +137,11 @@ app.get('/features', (req, res) => {
                     },
                     "listIconSet": {
                         "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
-                        "lastModified": "2018-07-06T10:00:33.977Z"
+                        "lastModified": (new Date()).toISOString()
                     },
                     "reference": {
                         "extended": {
-                            "lastModified": "2018-07-12T10:00:35.977Z"
+                            "lastModified": (new Date()).toISOString()
                         }
                     },
                     "mapFeatureType": "lbs-aop",
@@ -158,7 +158,7 @@ app.get('/features', (req, res) => {
 app.get('/details/:id', (req, res) => {
     console.log('**** GET / POI detail ****');
     const carId = req.params.id;
-    console.log(carId)
+    console.log(carId);
     // truffle_connect.detail(carId, (carInfo) => res.send(carInfo));
     res.send(carDetailTemplate.buildCarDetail('tokenID123', 'bcm', '2222222'))
 });
