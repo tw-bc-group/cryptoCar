@@ -11,19 +11,16 @@ module.exports = {
         const centerLon = (lon0 + lon1) / 2;
         const centerLat = (lat0 + lat1) / 2;
         console.log(centerLon, centerLat);
-        client.georadius(KEY_NAME, centerLon, centerLat, 50, 'km', 'WITHCOORD', 'ASC', (error, pois) => {
+        client.georadius(KEY_NAME, centerLon, centerLat, 500, 'km', 'WITHCOORD', 'ASC', (error, pois) => {
             if (error) {
                 console.log(error);
             }
 
-            pois = _.filter(pois, (poi) => { return VIN !== poi[0]});
+            // pois = _.filter(pois, (poi) => { return VIN !== poi[0]});
             callback(pois);
         });
     },
     savePosition: (selfLon, selfLat, VIN) => {
-        if (!VIN) {
-            VIN = 0;
-        }
         client.geoadd(KEY_NAME, selfLon, selfLat, VIN);
     },
     calcMovedDistance: (VIN, selfLon, selfLat, callback) => {

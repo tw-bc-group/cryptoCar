@@ -83,8 +83,8 @@ module.exports = {
             (pois) => callback(poiFeaturesTemplate.buildFeatures(pois))
         );
 
-        self.addNavigatedMileage(VIN, selfLon, selfLat);
-        self.meetingCar(VIN, selfLon, selfLat);
+        // self.addNavigatedMileage(VIN, selfLon, selfLat);
+        // self.meetingCar(VIN, selfLon, selfLat);
     },
     addNavigatedMileage: function (VIN, selfLon, selfLat) {
         const self = this;
