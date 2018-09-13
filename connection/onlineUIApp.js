@@ -40,6 +40,15 @@ const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("htt
                                                                             "My Crypto Car",
                                                                             "Owner");
 
+const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/carpic7.png", null, null, null),
+                                                                            "My Car Upgrade",
+                                                                            buildImage(null, null, null, null),
+                                                                            "Car property 1 new one",
+                                                                            "Car property 2 new one",
+                                                                            "My Crypto Car new one",
+                                                                            "Owner new one");
+
+
 const myCarEntry_DetailEntry = {
                                     "type": "locationBased",
                                     "title": "My Car",
@@ -97,7 +106,11 @@ const myCarEntry = {
                         "carouselEntry": myCarEntry_CarouselEntry,
                         "detailsEntry": myCarEntry_DetailEntry
                     }
-
+const myCarEntryNew = {
+                        "id": "carouselEntry01",
+                        "carouselEntry": myCarEntry_CarouselEntry_New,
+                        "detailsEntry": myCarEntry_DetailEntry
+                    }
 const newTab = (title, entries) => {
     return {
                 "title": title,
@@ -129,6 +142,14 @@ module.exports = {
         return ({
             "widgetData": {
                 "tabs": [newTab("My Crypto Car", [myCarEntry]), newTab("Collection", [myCarEntry, myCarEntry])]
+            },
+            "events": [refreshPageEvent("contractId")]
+        });
+    },
+    refreshPage: function () {
+        return ({
+            "widgetData": {
+                "tabs": [newTab("My Crypto Car", [myCarEntryNew]), newTab("Collection", [myCarEntryNew, myCarEntryNew])]
             },
             "events": [refreshPageEvent("contractId")]
         });

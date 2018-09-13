@@ -43,7 +43,7 @@ app.post('/app', (req, res) => {
 
     if(refreshPage){
         refreshPage = !refreshPage;
-        // res.send(onlineUIApp.refreshPage());
+        res.send(onlineUIApp.refreshPage());
     }else{
         refreshPage = !refreshPage;
         res.send(onlineUIApp.startApp());
