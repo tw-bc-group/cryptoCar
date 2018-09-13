@@ -19,6 +19,22 @@ const buildTwoLineButton = (image, primaryText, secondaryText, actionIcon, useOn
             };
 }
 
+const buildFeatureList = (contents) => {
+    return {
+                "type": "featureList",
+                "content":[
+                    contents
+                ]
+            }
+}
+
+const buildFeatureListContent = (title, iconImage) => {
+    return {
+                "title": title,
+                "icon": iconImage
+            }
+}
+
 const buildImage = (url, base64, asset, uiImage) => {
     return {
         "url": url,
@@ -59,6 +75,14 @@ const myCarEntry_CarouselEntry_New = create_MyCarEntry_CarouselEntry(buildImage(
                                                                             "My Crypto Car new one",
                                                                             "Owner new one");
 
+const contents = [
+    buildFeatureListContent("Badge 1", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    buildFeatureListContent("Badge 2", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    buildFeatureListContent("Badge 3", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    buildFeatureListContent("Badge 4", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    buildFeatureListContent("Badge 5", buildImage(null, null, "navigation/direction_arrow_01", null)),
+    buildFeatureListContent("Badge 6", buildImage(null, null, "navigation/direction_arrow_01", null)),
+]
 
 const myCarEntry_DetailEntry = {
                                     "type": "locationBased",
@@ -71,30 +95,7 @@ const myCarEntry_DetailEntry = {
                                     "rows": [
                                         buildOneLineButton("contractId", buildImage(null, null, null, null), "contract Id ...", null),
                                         buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                    {
-                                        "type": "featureList",
-                                        "content":[
-                                            {
-                                                "title": "Badge 1",
-                                                "icon": buildImage(null, null, "navigation/direction_arrow_01", null)
-                                            },{
-                                                "title": "Badge 2",
-                                                "icon": buildImage(null, null, "navigation/direction_arrow_01", null)
-                                            },{
-                                                "title": "Badge 3",
-                                                "icon": buildImage(null, null, "navigation/direction_arrow_01", null)
-                                            },{
-                                                "title": "Badge 4",
-                                                "icon": buildImage(null, null, "navigation/direction_arrow_01", null)
-                                            },{
-                                                "title": "Badge 5",
-                                                "icon": buildImage(null, null, "navigation/direction_arrow_01", null)
-                                            },{
-                                                "title": "Badge 6",
-                                                "icon": buildImage(null, null, "navigation/direction_arrow_01", null)
-                                            }
-                                        ]
-                                    },
+                                        buildFeatureList(contents),
                                     {
                                         "type": "pictureGallery",
                                         "content": [
