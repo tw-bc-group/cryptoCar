@@ -303,8 +303,9 @@ module.exports = {
                                             "favouritesButton": null,
                                             "rows": [
                                                 buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x95DC578D3C57900420beB5478faD20A94763504b", null, false),
-                                                buildOneLineButton(null, buildImage(null, null, null, null), "contract Id ...", null),
-                                                buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
+                                                buildOneLineButton(null, buildImage(null, null, null, null), "Horsepower: ............", null),
+                                                buildOneLineButton(null, buildImage(null, null, null, null), "Gear: ............", null),
+                                                // buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
                                                 buildFeatureList(featureListContents),
                                                 buildGallery(galleryContents)
                                             ]
@@ -358,7 +359,7 @@ module.exports = {
                                             "rows": [
                                                 buildOneLineButton(null, buildImage(null, null, null, null), "contract Id ...", null),
                                                 buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
-                                                buildFeatureList(featureListContents),
+                                                // buildFeatureList(featureListContents),
                                                 buildGallery(galleryContents)
                                             ]
                                         };
