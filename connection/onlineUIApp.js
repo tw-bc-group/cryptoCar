@@ -296,12 +296,13 @@ module.exports = {
         const myCarEntry_DetailEntry = {
                                             "type": "locationBased",
                                             "title": "Bumblebee",
-                                            "subtitle": "0x95DC578D3C57900420beB5478faD20A94763504b", 
+                                            "subtitle": "CLA ...", 
                                             "headerImage": buildImage("http://42.159.6.37:3000/images/my_original_car1.png", null, null, null),
                                             "starsImage": buildImage(null, null, null, null), 
                                             "voiceMessage": "Provided by ThoughtWorks", 
                                             "favouritesButton": null,
                                             "rows": [
+                                                buildTwoLineButton(buildImage(null, null, null, null), "Token Address", "0x95DC578D3C57900420beB5478faD20A94763504b", null, false),
                                                 buildOneLineButton(null, buildImage(null, null, null, null), "contract Id ...", null),
                                                 buildTwoLineButton(buildImage(null, null, null, null), "Primary Text", "Secondary Text", null, true),
                                                 buildFeatureList(featureListContents),
