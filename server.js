@@ -6,6 +6,7 @@ const truffle_connect = require('./connection/app.js');
 const notify = require('./connection/notify');
 const bodyParser = require('body-parser');
 const carDetailTemplate = require('./connection/carDetailTemplate');
+const poiFeaturesTemplate = require('./connection/poiFeaturesTemplate');
 const onlineUIApp = require('./connection/onlineUIApp');
 var refreshPage = false;
 
@@ -82,7 +83,7 @@ app.get('/features', (req, res) => {
                                     lat+0.001,
                                     lont+0.001
                                 ],
-                                "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                                "icon": poiFeaturesTemplate.poiIcon,
                                 "isAccess": true
                             }
                         ]
@@ -93,7 +94,7 @@ app.get('/features', (req, res) => {
                         "street": "CryptoCar"
                     },
                     "listIconSet": {
-                        "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                        "url": poiFeaturesTemplate.poiIcon,
                         "lastModified": (new Date()).toISOString()
                     },
                     "reference": {
@@ -114,7 +115,7 @@ app.get('/features', (req, res) => {
                                     lat+0.002,
                                     lont-0.001
                                 ],
-                                "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                                "icon": poiFeaturesTemplate.poiIcon,
                                 "isAccess": true
                             }
                         ]
@@ -125,7 +126,7 @@ app.get('/features', (req, res) => {
                         "street": "CryptoCar"
                     },
                     "listIconSet": {
-                        "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                        "url": poiFeaturesTemplate.poiIcon,
                         "lastModified": (new Date()).toISOString()
                     },
                     "reference": {
@@ -147,7 +148,7 @@ app.get('/features', (req, res) => {
                                     39.9087,
                                     116.3975
                                 ],
-                                "icon": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                                "icon": poiFeaturesTemplate.poiIcon,
                                 "isAccess": true
                             }
                         ]
@@ -158,7 +159,7 @@ app.get('/features', (req, res) => {
                         "street": "CryptoCar"
                     },
                     "listIconSet": {
-                        "url": "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/icons/Other/automotive.png",
+                        "url": poiFeaturesTemplate.poiIcon,
                         "lastModified": (new Date()).toISOString()
                     },
                     "reference": {

@@ -1,6 +1,7 @@
 const _ = require('lodash');
-
+const poiIcon = "https://lbsapi-ntg6freshup2-test.azure.mercedes-benz.com/api/images/cryptocar/car%20logo2.png";
 module.exports = {
+    poiIcon,
     buildFeatures: function (featuresData) {
         const status = {
             'timestamp': new Date(),
@@ -25,6 +26,7 @@ module.exports = {
                                 parseFloat(data[1][0]),
                                 parseFloat(data[1][1])
                             ],
+                            'icon': poiIcon,
                             'isAccess': true
                         }
                     ]
