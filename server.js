@@ -29,7 +29,7 @@ app.get('/features', (req, res) => {
     console.log('**** GET / POIs ****');
 
     const { boundingbox, scale, position} = req.query;
-    console.log(req);
+    console.log(req.query);
     console.log(position);
     // const { boundingbox, scale, position, heading, VIN } = req.query;
     // console.log(position);
