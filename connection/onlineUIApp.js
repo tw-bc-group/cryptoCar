@@ -110,6 +110,14 @@ module.exports = {
                     "providedByLogo": null,
                     "leftLogo": null,
                     "entries": [myCarEntry, myCarEntry]
+                },{
+                    "title": "History",
+                    "emptyListText": "No matched car",
+                    "providedByText": "Provided by ThoughtWorks", // Notation: If just has one tab, then the provided text will show on the title
+                    "providedByText": "Crypto Car",
+                    "providedByLogo": null,
+                    "leftLogo": null,
+                    "entries": [myCarEntry, myCarEntry]
                 }]
             }
             // "events": [{
