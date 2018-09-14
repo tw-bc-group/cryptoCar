@@ -161,17 +161,19 @@ module.exports = {
                                             "horizontalAlignment": "center",
                                             "width": 10
                                         },
-                                        {}
+                                        {
+                                            "type": "text",
+                                            "width": 90,
+                                            "verticalAlignment": "center",
+                                            "horizontalAlignment": "left",
+                                            "font": "f12",
+                                            "color": "color_c07a",
+                                            "text": "周一至周日\n00:00-21:00"
+                                        }
                                     ]
                                 },
                                 {
                                     "type": "row",
-                                    "width": 90,
-                                    "verticalAlignment": "center",
-                                    "horizontalAlignment": "left",
-                                    "font": "f12",
-                                    "color": "color_c07a",
-                                    "text": "周一至周日\n00:00-21:00",
                                     "entries": [
                                         {
                                             "type": "image",
@@ -198,7 +200,6 @@ module.exports = {
                 }
             ]
         }
-
 
           
     }
