@@ -36,38 +36,38 @@ module.exports = {
     buildCarDetail: function (tokenId, bcm, navigatedMileage) {
         car = carMap[20000];
         console.log("**** detail json ****", JSON.stringify(car));
-        return {
-            "location": "北京",
-            "addPOIinfos": [ 
-                {
-                "type": "image",
-                "width": 100,
-                "height": 100,
-                "scale": 1,
-                "verticalAlignment": "top", 
-                "horizontalAlignment": "top", 
-                "picture": {
-                    "url": car.imageName,
-                    "base64": null,
-                    "asset": null,
-                    "uiImage": null
-                }
-                }, {
-                    "type": "row",
-                    "entries": [
-                        {
-                            "type": "text",
-                            "width": 100,
-                            "height": 100,
-                            "verticalAlignment": "center",
-                            "horizontalAlignment": "left",
-                            "font": "f12",
-                            "color": "color_c07a",
-                            "text": "Name: " + car.name + "\nClass: " + car.class + "\nToken Address: " + car.tokenAddress + "\nHorsepower: " + car.horsePower + "\nGear: " + car.gear
-                        }
-                    ]
-                }]
-        }
+        // return {
+        //     "location": "北京",
+        //     "addPOIinfos": [ 
+        //         {
+        //         "type": "image",
+        //         "width": 100,
+        //         "height": 100,
+        //         "scale": 1,
+        //         "verticalAlignment": "top", 
+        //         "horizontalAlignment": "top", 
+        //         "picture": {
+        //             "url": car.imageName,
+        //             "base64": null,
+        //             "asset": null,
+        //             "uiImage": null
+        //         }
+        //         }, {
+        //             "type": "row",
+        //             "entries": [
+        //                 {
+        //                     "type": "text",
+        //                     "width": 100,
+        //                     "height": 100,
+        //                     "verticalAlignment": "center",
+        //                     "horizontalAlignment": "left",
+        //                     "font": "f12",
+        //                     "color": "color_c07a",
+        //                     "text": "Name: " + car.name + "\nClass: " + car.class + "\nToken Address: " + car.tokenAddress + "\nHorsepower: " + car.horsePower + "\nGear: " + car.gear
+        //                 }
+        //             ]
+        //         }]
+        // }
         // return detail;
         // return (
         //     {
@@ -114,6 +114,92 @@ module.exports = {
         //         ]
         //     }
         // );
-        // return 
+        return {
+            "location": "北京",
+            "addPOIinfos": [
+              {
+                "type": "subheader",
+                "text": "DETAILS"
+              },
+              {
+                "type": "row",
+                "entries": [
+                  {
+                    "type": "column",
+                    "width": 100,
+                    "entries": [
+                      {
+                        "type": "row",
+                        "entries": [
+                          {
+                            "type": "image",
+                            "picture": {
+                              "base64":""
+                            },
+                            "horizontalAlignment": "right",
+                            "width": 30
+                          },
+                          {
+                            "type": "text",
+                            "width": 70,
+                            "verticalAlignment": "center",
+                            "horizontalAlignment": "left",
+                            "font": "f12",
+                            "color": "color_c07a",
+                            "text": "(1611), 23333/Person"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "entries": [
+                          {
+                            "type": "image",
+                            "picture": {
+                               "base64":""
+                            },
+                            "horizontalAlignment": "center",
+                            "width": 10
+                          },
+                          {
+                            "type": "text",
+                            "width": 90,
+                            "verticalAlignment": "center",
+                            "horizontalAlignment": "left",
+                            "font": "f12",
+                            "color": "color_c07a",
+                            "text": "周一至周日\n00:00-21:00"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "entries": [
+                          {
+                            "type": "image",
+                            "picture": {
+                              "base64": ""
+                            },
+                            "horizontalAlignment": "center",
+                            "width": 10
+                          },
+                          {
+                            "type": "text",
+                            "width": 90,
+                            "verticalAlignment": "center",
+                            "horizontalAlignment": "left",
+                            "font": "f12",
+                            "color": "color_c07a",
+                            "text": "LBS\nLBS"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+          
     }
 };
