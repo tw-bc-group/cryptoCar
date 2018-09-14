@@ -156,10 +156,11 @@ module.exports = {
                           {
                             "type": "image",
                             "picture": {
-                               "base64":""
+                               "base64":null, 
+                               "url": car.imageName
                             },
                             "horizontalAlignment": "center",
-                            "width": 10
+                            "width": null
                           },
                           {
                             "type": "text",
@@ -168,7 +169,7 @@ module.exports = {
                             "horizontalAlignment": "left",
                             "font": "f12",
                             "color": "color_c07a",
-                            "text": "周一至周日\n00:00-21:00"
+                            "text": ""
                           }
                         ]
                       },
@@ -190,7 +191,7 @@ module.exports = {
                             "horizontalAlignment": "left",
                             "font": "f12",
                             "color": "color_c07a",
-                            "text": "LBS\nLBS"
+                            "text": "Name: " + car.name + "\nClass: " + car.class + "\nToken Address: " + car.tokenAddress + "\nHorsepower: " + car.horsePower + "\nGear: " + car.gear
                           }
                         ]
                       }
