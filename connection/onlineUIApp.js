@@ -230,7 +230,7 @@ const myCollection_1 = () => {
     const myCarEntry_CarouselEntry = create_MyCarEntry_CarouselEntry(buildImage("http://42.159.6.37:3000/images/my_guest_car1.png", null, null, null),
                                                                             "Optimus Prime",
                                                                             buildImage(null, null, null, null),
-                                                                            "V 260 L",
+                                                                            "G 500",
                                                                             "0x9958b1503D238A2CD0C2b51026344ec0231c7EB0",
                                                                             "Optimus Prime",
                                                                             "Others");
@@ -252,7 +252,7 @@ const myCollection_1 = () => {
     const myCarEntry_DetailEntry = {
                                         "type": "locationBased",
                                         "title": "Optimus Prime",
-                                        "subtitle": "V 260 L", 
+                                        "subtitle": "G 500", 
                                         "headerImage": buildImage("http://42.159.6.37:3000/images/my_guest_car1.png", null, null, null),
                                         "starsImage": buildImage(null, null, null, null), 
                                         "voiceMessage": "Provided by ThoughtWorks", 
