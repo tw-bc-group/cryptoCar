@@ -23,10 +23,7 @@ module.exports = {
                     ]
                 },
                 "lastModified": (new Date()).toISOString(),
-                "name": "CryptoCar",
-                "address": {
-                    "street": "CryptoCar"
-                },
+                "name": "Ironhide V 260 AMG",
                 "listIconSet": {
                     "url": poiIcon,
                     "lastModified": (new Date()).toISOString()
