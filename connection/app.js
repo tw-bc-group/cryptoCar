@@ -114,14 +114,14 @@ module.exports = {
             }
 
             CarController.deployed().then(function (instance) {
-                if (counter[poi[0]] < 1) {
+                if (counter[poi[0][0]] < 1) {
                     setTimeout(function () {
                         notify.notifyCarsOwner('CRYPTOCAR', 'LE43X8HB6KZ000013', function () {
                         });
                         // notify.notifyCarsOwner("CRYPTOCAR", "WDD217LJ4XG002440", function(){});
 
                     }, 40000);
-                    counter[poi[0]] = counter[poi[0]]++;
+                    counter[poi[0][0]] = counter[poi[0][0]]++;
                 }
 
                 return instance.meetCar(parseInt(VIN), parseInt(poi[ 0 ][ 0 ]), { from: owner, gas: 300000 });
