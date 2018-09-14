@@ -146,7 +146,7 @@ module.exports = {
                                             "horizontalAlignment": "left",
                                             "font": "f12",
                                             "color": "color_c07a",
-                                            "text": "(1611), 23333/Person"
+                                            "text": "Name: " + car.name
                                         }
                                     ]
                                 },
@@ -168,7 +168,7 @@ module.exports = {
                                             "horizontalAlignment": "left",
                                             "font": "f12",
                                             "color": "color_c07a",
-                                            "text": "周一至周日\n00:00-21:00"
+                                            "text": "Class: " + car.class + "\nToken Address: " + car.tokenAddress
                                         }
                                     ]
                                 },
@@ -190,7 +190,7 @@ module.exports = {
                                             "horizontalAlignment": "left",
                                             "font": "f12",
                                             "color": "color_c07a",
-                                            "text": "LBS\nLBS"
+                                            "text": "Horsepower: " + car.horsePower + "\nGear: " + car.gear
                                         }
                                     ]
                                 }
